@@ -1,7 +1,7 @@
 // src/theme/MDXContent.js
 import React from 'react';
 import MDXContent from '@theme-original/MDXContent';
-import Chatbot from '@site/src/components/Chatbot';
+import Chatbot from '@site/src/components/chatbot';
 import ReadChapterButton from '@site/src/components/readbutton'; 
 import AskAISelectionBubble from "@site/src/components/askaibubble";
 
