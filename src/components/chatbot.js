@@ -77,7 +77,7 @@ export default function Chatbot() {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
           query: currentInput,
-          selected_text: rawSelectedText || currentInput, // send original book text if exists
+          selected_text: rawSelectedText || currentInput, 
         }),
       });
       const data = await res.json();
