@@ -1,0 +1,134 @@
+/**
+ * Any CSS included here will be global. The classic template
+ * bundles Infima by default. Infima is a CSS framework designed to
+ * work well for content-centric websites.
+ */
+
+/* You can override the default Infima variables here. */
+:root {
+  --ifm-color-primary: #2e8555;
+  --ifm-color-primary-dark: #29784c;
+  --ifm-color-primary-darker: #277148;
+  --ifm-color-primary-darkest: #205d3b;
+  --ifm-color-primary-light: #33925d;
+  --ifm-color-primary-lighter: #359962;
+  --ifm-color-primary-lightest: #3cad6e;
+  --ifm-code-font-size: 95%;
+  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
+}
+
+/* For readability concerns, you should choose a lighter palette in dark mode. */
+[data-theme='dark'] {
+  --ifm-color-primary: #25c2a0;
+  --ifm-color-primary-dark: #21af90;
+  --ifm-color-primary-darker: #1fa588;
+  --ifm-color-primary-darkest: #1a8870;
+  --ifm-color-primary-light: #29d5b0;
+  --ifm-color-primary-lighter: #32d8b4;
+  --ifm-color-primary-lightest: #4fddbf;
+  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
+}
+
+
+.navbar__link:hover {
+  color: #7a37bc !important;
+}
+
+.navbar__link--active {
+  color: #7a37bc !important;
+}
+
+.navbar__brand .navbar__title:hover {
+  color: #7a37bc !important;
+}
+
+/* Sidebar background */
+.menu {
+  background-color: #131117; /* light purple */
+  padding: 1rem;
+}
+
+/* Sidebar links */
+.menu__link {
+  color: #560d8e !important; 
+  font-weight: 500;
+  transition: 0.3s;
+}
+
+.menu__link:hover {
+  color: #a269dc !important; /* lighter purple on hover */
+}
+
+/* Active link */
+.menu__link--active {
+  color: #8a2be2 !important;
+  font-weight: 700;
+}
+
+
+/* Headings in chapter */
+.markdown h1, .markdown h2, .markdown h3 {
+  color: #560d8e !important;
+  scroll-margin-top: 80px; /* navbar ke liye */
+}
+
+/* Paragraphs */
+.markdown p {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: black; /* dark purple text */
+}
+
+[data-theme='dark'] .markdown p {
+  color: white; /* dark mode */
+}
+
+/* Links in content */
+.markdown a {
+  color: #7b3db9 !important;
+  text-decoration: underline;
+}
+
+.markdown a:hover {
+  color: #a269dc !important;
+}
+
+/* TOC Heading */
+.table-of-contents__link--active {
+  color: #a269dc !important;
+  font-weight: 600;
+}
+
+/* TOC Normal Links */
+.table-of-contents__link {
+  color: #7b3db9 !important;
+  transition: 0.2s;
+}
+
+.table-of-contents__link:hover {
+  color: #560d8e !important;
+}
+
+/* Breadcrumb links */
+.breadcrumbs__link {
+  color: #a269dc !important;
+  font-weight: 500;
+  transition: 0.2s;
+}
+
+.breadcrumbs__link:hover {
+  color: #560d8e !important;
+}
+
+/* Current page in breadcrumb */
+.breadcrumbs__item--active .breadcrumbs__link,
+.breadcrumbs__item--active {
+  color: #560d8e !important;
+  font-weight: 600;
+}
+
+.tts-highlight {
+  background-color: #560d8e33 !important;
+  color: #fff !important;
+  transition: background-color 0.3s ease;
+}

@@ -1,0 +1,221 @@
+/* Floating Button */
+.chatBubble {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: #560d8e;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 28px;
+  cursor: pointer;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.25);
+  z-index: 999;
+  transition: all 0.3s ease;
+  animation: bubblePop 0.6s ease, bubblePulse 2s infinite;
+}
+
+.chatBubble:hover {
+  background: #7723cc;
+  transform: scale(1.15) rotate(-5deg);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.35);
+}
+
+/* Floating Greeting Text next to bubble */
+.greetingText {
+  position: fixed;
+  bottom: 45px;
+  right: 100px;
+  background: linear-gradient(135deg, #560d8e, #7723cc);
+  color: white;
+  padding: 0.6rem 1rem;
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.25);
+  font-size: 14px;
+  opacity: 0;
+  z-index: 998;
+  white-space: nowrap;
+  overflow: hidden;
+  animation: slideInFromRight 0.6s forwards, fadeInText 1s forwards;
+}
+
+/* Chat Modal box */
+.chatBox {
+  position: fixed;
+  bottom: 100px;
+  right: 30px;
+  width: 360px;
+  max-height: 500px;
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.25);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  z-index: 998;
+  animation: fadeInUp 0.5s ease;
+  border-top: 4px solid #560d8e;
+}
+
+/* Header */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 16px;
+  background: #560d8e;
+  color: white;
+  font-weight: bold;
+  letter-spacing: 0.5px;
+}
+
+.header button {
+  background: transparent;
+  border: none;
+  font-size: 22px;
+  color: white;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.header button:hover {
+  transform: scale(1.2);
+}
+
+/* Messages */
+.messages {
+  padding: 1rem;
+  flex-grow: 1;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  background: #fdfdfd;
+  animation: fadeIn 0.5s ease;
+}
+
+.msg {
+  padding: 0.6rem 1rem;
+  border-radius: 14px;
+  max-width: 75%;
+  word-wrap: break-word;
+  opacity: 0;
+  animation: messageFade 0.5s forwards;
+}
+
+.user {
+  align-self: flex-end;
+  background: #560d8e;
+  color: white;
+  box-shadow: 0 2px 10px rgba(86,13,142,0.3);
+}
+
+.bot {
+  align-self: flex-start;
+  background: #f1f1f1;
+  color: #333;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+
+/* Typing animation bubble */
+.typing {
+  display: inline-block;
+  font-style: italic;
+  color: #555;
+}
+
+.dot {
+  display: inline-block;
+  animation: blink 1.4s infinite both;
+  margin-left: 2px;
+}
+
+.dot:nth-child(1) { animation-delay: 0s; }
+.dot:nth-child(2) { animation-delay: 0.2s; }
+.dot:nth-child(3) { animation-delay: 0.4s; }
+
+/* Input Section */
+.inputArea {
+  display: flex;
+  border-top: 1px solid #f5f2f2;
+}
+
+.inputArea input {
+  flex: 1;
+  padding: 0.8rem 1rem;
+  border: none;
+  outline: none;
+  background: white;
+  color: rgb(31, 28, 28);
+  border-radius: 0 0 0 16px;
+  transition: background 0.3s ease;
+}
+
+.inputArea input:focus {
+  background: #f9f4f4;
+}
+
+.inputArea button {
+  padding: 0.8rem 1rem;
+  border: none;
+  background: #560d8e;
+  color: white;
+  cursor: pointer;
+  border-radius: 0 0 16px 0;
+  transition: all 0.3s ease;
+}
+
+.inputArea button:hover {
+  background: #7723cc;
+}
+
+.inputArea button:disabled {
+  /* background: #a269dc; */
+  cursor: not-allowed;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes bubblePop {
+  0% { transform: scale(0); opacity: 0; }
+  60% { transform: scale(1.2); opacity: 1; }
+  100% { transform: scale(1); }
+}
+
+@keyframes bubblePulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+}
+
+@keyframes slideInFromRight {
+  from { opacity: 0; transform: translateX(30px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes fadeInText {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes messageFade {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes blink {
+  0%, 80%, 100% { opacity: 0; }
+  40% { opacity: 1; }
+}

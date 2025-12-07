@@ -1,0 +1,165 @@
+/* Hero section */
+.heroBanner {
+  padding: 4rem 0;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+
+  background: linear-gradient(135deg, #a269dc, #560d8e, #8a2be2);
+  background-size: 400% 400%;
+  animation: gradientAnimation 12s ease-in-out infinite;
+
+  color: white;
+}
+
+@keyframes gradientAnimation {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+@media screen and (max-width: 996px) {
+  .heroBanner {
+    padding: 2rem;
+  }
+}
+
+/* ============================
+   Custom Smooth Scroll Slider
+   ============================ */
+
+.cardsContainer {
+  padding: 2rem;
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.scrollContainer {
+  display: flex;
+  overflow-x: auto;
+  gap: 1.5rem;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  padding: 1rem 0;
+}
+
+.scrollContainer::-webkit-scrollbar { display: none; }
+.scrollContainer { -ms-overflow-style: none; scrollbar-width: none; }
+
+/* arrows */
+.arrowLeft,
+.arrowRight {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+
+  background: transparent;
+  border: none;
+  color: #560d8e;
+  font-size: 32px;
+  cursor: pointer;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.arrowLeft:hover,
+.arrowRight:hover {
+  opacity: 0.6;
+}
+
+.arrowLeft { left: -10px; }
+.arrowRight { right: 1px; }
+
+/* cards */
+.card {
+  background: #fff;
+  border-radius: 12px;
+  width: 280px;
+  padding: 1rem;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  scroll-snap-align: start;
+}
+
+.card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 30px rgba(0,0,0,0.2);
+}
+
+.card img {
+  width: 100%;
+  height: 140px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 0.8rem;
+}
+
+.card h3 {
+  font-size: 1.1rem;
+  margin: 0.5rem 0;
+  text-align: center;
+  color: #560d8e !important;
+}
+
+.card p {
+  font-size: 0.9rem;
+  text-align: center;
+  color: #8147b5;
+  flex-grow: 1;
+}
+
+.progressBarContainer {
+  width: 100%;
+  background: #eee;
+  border-radius: 8px;
+  height: 10px;
+  margin-top: 0.8rem;
+  overflow: hidden;
+}
+
+.progressBarFill {
+  height: 100%;
+  background: linear-gradient(90deg, #7a37bc 0%, #560d8e 100%);
+  width: 0%;
+  transition: width 1s ease-in-out;
+}
+
+/* responsive */
+
+@media screen and (max-width: 996px) {
+  .card { width: 220px; }
+}
+
+@media screen and (max-width: 600px) {
+  .card { width: 280px !important; }
+
+  .arrowLeft,
+  .arrowRight {
+    width: 32px;
+    height: 32px;
+    font-size: 20px;
+  }
+}
+
+/* ============================
+   NEW — 4 Cards on Laptop
+   ============================ */
+@media screen and (min-width: 1200px) {
+  .scrollContainer {
+    gap: 5.5rem;
+  }
+
+  .card {
+    width: 280px 
+  }
+}

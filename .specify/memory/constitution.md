@@ -1,55 +1,104 @@
-# [PROJECT_NAME] Constitution
-<!-- Example: Spec Constitution, TaskFlow Constitution, etc. -->
+<!--
+Sync Impact Report:
+Version change: 73e6921 Initial commit from Specify template → 1.0.0
+List of modified principles: All principles modified/replaced
+Added sections: RAG Chatbot Backend Principles, Governance
+Removed sections: All previous book-related sections
+Templates requiring updates:
+- .specify/templates/plan-template.md: ⚠ pending (New component, requires review for alignment)
+- .specify/templates/spec-template.md: ⚠ pending (New component, requires review for alignment)
+- .specify/templates/tasks-template.md: ⚠ pending (New component, requires review for alignment)
+- .specify/templates/commands/*.md: ✅ updated (Generic command files reviewed for agent-specific names)
+Follow-up TODOs: None
+-->
+# Project Constitution
 
-## Core Principles
+## Project Title: RAG Chatbot Backend for Docusaurus Book Site
+Type: Backend Service
 
-### [PRINCIPLE_1_NAME]
-<!-- Example: I. Library-First -->
-[PRINCIPLE_1_DESCRIPTION]
-<!-- Example: Every feature starts as a standalone library; Libraries must be self-contained, independently testable, documented; Clear purpose required - no organizational-only libraries -->
+## Core Principles: RAG Chatbot Backend
 
-### [PRINCIPLE_2_NAME]
-<!-- Example: II. CLI Interface -->
-[PRINCIPLE_2_DESCRIPTION]
-<!-- Example: Every library exposes functionality via CLI; Text in/out protocol: stdin/args → stdout, errors → stderr; Support JSON + human-readable formats -->
+### Principle 1: Gemini Integration
+- **Name:** Google Gemini (free tier via Google AI Studio)
+- **Rule:** The RAG chatbot backend MUST exclusively use Google Gemini, leveraging its free tier via Google AI Studio.
+- **Rationale:** Ensures cost-free operation and adherence to specified AI service provider.
 
-### [PRINCIPLE_3_NAME]
-<!-- Example: III. Test-First (NON-NEGOTIABLE) -->
-[PRINCIPLE_3_DESCRIPTION]
-<!-- Example: TDD mandatory: Tests written → User approved → Tests fail → Then implement; Red-Green-Refactor cycle strictly enforced -->
+### Principle 2: Python SDK
+- **Name:** google-generativeai Python SDK
+- **Rule:** All interactions with Google Gemini MUST be implemented using the `google-generativeai` Python SDK.
+- **Rationale:** Standardizes API communication and simplifies development with the chosen AI service.
 
-### [PRINCIPLE_4_NAME]
-<!-- Example: IV. Integration Testing -->
-[PRINCIPLE_4_DESCRIPTION]
-<!-- Example: Focus areas requiring integration tests: New library contract tests, Contract changes, Inter-service communication, Shared schemas -->
+### Principle 3: Embedding Model
+- **Name:** models/embedding-001 (768 dimensions)
+- **Rule:** The embedding model used for RAG MUST be `models/embedding-001` with 768 dimensions.
+- **Rationale:** Ensures consistency in vector space and optimal performance with Qdrant.
 
-### [PRINCIPLE_5_NAME]
-<!-- Example: V. Observability, VI. Versioning & Breaking Changes, VII. Simplicity -->
-[PRINCIPLE_5_DESCRIPTION]
-<!-- Example: Text I/O ensures debuggability; Structured logging required; Or: MAJOR.MINOR.BUILD format; Or: Start simple, YAGNI principles -->
+### Principle 4: Generation Model
+- **Name:** gemini-1.5-flash
+- **Rule:** The generation model used for chatbot responses MUST be `gemini-1.5-flash`, adhering to its fast, free, and 1M tokens/day limit.
+- **Rationale:** Prioritizes speed and cost-effectiveness while meeting daily usage limits.
 
-### [PRINCIPLE_6_NAME]
+### Principle 5: Backend Framework
+- **Name:** FastAPI
+- **Rule:** The RAG chatbot backend MUST be built using the FastAPI framework.
+- **Rationale:** Leverages a modern, high-performance web framework suitable for API development.
 
+### Principle 6: Vector Database
+- **Name:** Qdrant Cloud Free Tier
+- **Rule:** The vector database for storing embeddings MUST be Qdrant Cloud Free Tier.
+- **Rationale:** Ensures a scalable and cost-free solution for vector similarity search.
 
-[PRINCIPLE__DESCRIPTION]
+### Principle 7: Metadata Database
+- **Name:** Neon Serverless Postgres
+- **Rule:** The metadata database for storing document information MUST be Neon Serverless Postgres.
+- **Rationale:** Provides a cost-effective and serverless relational database solution.
 
-## [SECTION_2_NAME]
-<!-- Example: Additional Constraints, Security Requirements, Performance Standards, etc. -->
+### Principle 8: Book Content Location
+- **Name:** ../docs/chapters/.md
+- **Rule:** The chatbot MUST retrieve book content from the `../docs/chapters/.md` directory, relative to the backend-chatbot folder.
+- **Rationale:** Defines the authoritative source for book content used in retrieval-augmented generation.
 
-[SECTION_2_CONTENT]
-<!-- Example: Technology stack requirements, compliance standards, deployment policies, etc. -->
+### Principle 9: Selected Text Only Mode
+- **Name:** Selected Text Only Mode
+- **Rule:** The chatbot MUST support a "selected text only" mode, where retrieval is bypassed if the user highlights text.
+- **Rationale:** Provides flexibility for users to get direct answers without RAG if context is already provided.
 
-## [SECTION_3_NAME]
-<!-- Example: Development Workflow, Review Process, Quality Gates, etc. -->
+### Principle 10: Code Location
+- **Name:** /backend-chatbot folder
+- **Rule:** All code for this RAG chatbot backend MUST reside within the `/backend-chatbot` folder.
+- **Rationale:** Maintains project organization and separation of concerns within the repository.
 
-[SECTION_3_CONTENT]
-<!-- Example: Code review requirements, testing gates, deployment approval process, etc. -->
+### Principle 11: Environment Variables
+- **Name:** Required Environment Variables
+- **Rule:** The only environment variables required MUST be `GEMINI_API_KEY`, `QDRANT_URL`, `QDRANT_API_KEY`, and `DATABASE_URL`.
+- **Rationale:** Simplifies deployment and configuration by minimizing necessary secrets/variables.
+
+### Principle 12: Free Tier Operation
+- **Name:** 100% Free to Run Forever
+- **Rule:** The entire RAG chatbot backend solution MUST be 100% free to run forever on free tiers of all chosen services.
+- **Rationale:** Primary overarching constraint ensuring long-term sustainability without operational costs.
+
+### Principle 13: Full Working Code
+- **Name:** Output Full Working Code
+- **Rule:** All generated code MUST be full working code, with no placeholders.
+- **Rationale:** Ensures immediate usability and reduces post-generation manual work.
 
 ## Governance
-<!-- Example: Constitution supersedes all other practices; Amendments require documentation, approval, migration plan -->
 
-[GOVERNANCE_RULES]
-<!-- Example: All PRs/reviews must verify compliance; Complexity must be justified; Use [GUIDANCE_FILE] for runtime development guidance -->
+### Amendment Procedure
+This constitution can be amended by consensus of the project architects. Proposed amendments must be reviewed against the core product promise and justified with clear rationale for any changes to principles or governance.
 
-**Version**: [CONSTITUTION_VERSION] | **Ratified**: [RATIFICATION_DATE] | **Last Amended**: [LAST_AMENDED_DATE]
-<!-- Example: Version: 2.1.1 | Ratified: 2025-06-13 | Last Amended: 2025-07-16 -->
+### Versioning Policy
+Constitution versions will follow semantic versioning (MAJOR.MINOR.PATCH):
+- **MAJOR:** Backward incompatible governance/principle removals or redefinitions.
+- **MINOR:** New principle/section added or materially expanded guidance.
+- **PATCH:** Clarifications, wording, typo fixes, non-semantic refinements.
+
+### Compliance Review
+Compliance with these principles will be reviewed regularly, especially during major architectural decisions, feature implementations, and deployment processes. Any deviations must be justified and approved by the project architects.
+
+## Constitution Metadata
+
+- **RATIFICATION_DATE:** 2025-12-06
+- **LAST_AMENDED_DATE:** 2025-12-06
+- **CONSTITUTION_VERSION:** 1.0.0
