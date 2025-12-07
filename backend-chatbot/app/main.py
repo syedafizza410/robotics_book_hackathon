@@ -7,7 +7,7 @@ from app.vector_db import create_qdrant_collection
 app = FastAPI()
 
 origins = [
-    "http://localhost:3000",  
+    "https://robotics-book-hackathon-5zn2.vercel.app",  
 ]
 
 app.add_middleware(
