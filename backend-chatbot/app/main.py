@@ -6,13 +6,9 @@ from app.vector_db import create_qdrant_collection
 
 app = FastAPI()
 
-origins = [
-    "https://robotics-book-hackathon-5zn2.vercel.app",  
-]
-
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=origins,
+    allow_origins=["*"],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],

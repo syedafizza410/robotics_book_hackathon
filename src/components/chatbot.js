@@ -72,7 +72,7 @@ export default function Chatbot() {
     setIsTyping(true);
 
     try {
-      const res = await fetch(`${process.env.VITE_CHATBACKEND_URL}/chat`, {
+      const res = await fetch(`${process.env.DOCUSAURUS_CHATBACKEND_URL}/chat`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
