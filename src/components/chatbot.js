@@ -82,21 +82,19 @@ export default function Chatbot() {
       }
     );
 
+    console.log("response status", res.status);
     const data = await res.json();
+    console.log("response data:", data);
 
     if (
-      res.status === 429 ||
-      (data.detail &&
-        typeof data.detail === "string" &&
-        data.detail.toLowerCase().includes("quota"))
+      (data.answer && data.answer.toLowerCase().inculdes("quota")) || 
+      res.status === 429
     ) {
       setMessages((prev) => [
         ...prev,
         {
           role: "bot",
-          content:
-            "⚠️ API quota exceeded. Please try again later or after daily reset.",
-        },
+          content: data.answer},
       ]);
     } else if (!res.ok) {
       setMessages((prev) => [
