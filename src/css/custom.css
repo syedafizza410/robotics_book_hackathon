@@ -122,3 +122,16 @@
   color: #fff !important;
   transition: background-color 0.3s ease;
 }
+
+.pagination-nav__link {
+  color: #630c9a !important;       
+  border-color: #34075a !important;
+}
+
+.pagination-nav__sublabel {
+  color: #891fc2 !important;          
+}
+
+.pagination-nav__label {
+  color: #640ea2 !important;       
+}
