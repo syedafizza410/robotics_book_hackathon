@@ -48,13 +48,13 @@
 
 /* Sidebar links */
 .menu__link {
-  color: #1f1d21 !important; 
+  color: #f9f5fc !important; 
   font-weight: 500;
   transition: 0.3s;
 }
 
 .menu__link:hover {
-  color: #a269dc !important; 
+  color: #7218cc !important; 
 }
 
 .menu__link--active {
