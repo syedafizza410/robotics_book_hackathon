@@ -16,7 +16,7 @@ async def chat_endpoint(request: ChatRequest):
 
         if "quota exceeded" in answer.lower():
             return ChatResponse(
-                answer="⚠️ API quota exceeded. Please try again after daily reset."
+                answer=answer  
             )
 
         return ChatResponse(answer=answer)
