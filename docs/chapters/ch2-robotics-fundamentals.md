@@ -46,7 +46,7 @@ Robotics heavily relies on various coordinate systems (world, base, joint, end-e
 
 ## Diagrams
 
-![diagram-placeholder](../../static/img/placeholder.png)
+![diagram-placeholder](../../static/img/chapter2diagram1.jpg)
 *Figure 2.1: Illustration of a 2-DOF robotic arm demonstrating forward kinematics.*
 
 ![diagram-placeholder](../../static/img/placeholder.png)
