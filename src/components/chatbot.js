@@ -79,10 +79,23 @@ export default function Chatbot() {
         }),
       });
       const data = await res.json();
+
+      if (res.status === 429 || (data.detail && data.detail.inculdes ("quota"))) {
       setMessages((prev) => [
         ...prev,
-        { role: "bot", content: data.answer, sources: data.sources },
+        { role: "bot", content: "⚠️ API quota exceeded. Please try again later or after daily reset.",},
       ]);
+     } else if (!res.ok) {
+        setMessages((prev) => [
+          ...prev,
+          {role: "bot", content: "❌ Error connecting to backend."},
+        ]);
+      }  else {
+          setMessages((prev) => [
+            ...prev,
+            {role: "bot", content: data.answer, sources: data.sources},
+          ]);
+        }
       setIsTyping(false);
       setRawSelectedText(null); 
     } catch {
