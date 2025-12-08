@@ -135,3 +135,11 @@
 .pagination-nav__label {
   color: #640ea2 !important;       
 }
+
+.theme-edit-this-page {
+  color: #9642bd !important;        
+}
+
+.theme-edit-this-page:hover {
+  color: #4d0982 !important;        
+}
