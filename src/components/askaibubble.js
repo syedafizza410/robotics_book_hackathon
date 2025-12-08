@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import "./AskAISelectionBubble.css"; 
 
 export default function AskAISelectionBubble() {
   const [visible, setVisible] = useState(false);
@@ -11,10 +10,7 @@ export default function AskAISelectionBubble() {
       const text = window.getSelection()?.toString().trim();
       if (text?.length > 0) {
         const rect = window.getSelection().getRangeAt(0).getBoundingClientRect();
-        setPos({
-          x: Math.min(rect.left + window.scrollX, window.innerWidth - 150),
-          y: rect.top + window.scrollY - 45,
-        });
+        setPos({ x: rect.left + window.scrollX, y: rect.top + window.scrollY - 45 });
         setSelectedText(text);
         setVisible(true);
       } else {
@@ -25,12 +21,10 @@ export default function AskAISelectionBubble() {
 
     document.addEventListener("mouseup", handleSelection);
     document.addEventListener("keyup", handleSelection);
-    document.addEventListener("touchend", handleSelection); 
 
     return () => {
       document.removeEventListener("mouseup", handleSelection);
       document.removeEventListener("keyup", handleSelection);
-      document.removeEventListener("touchend", handleSelection);
     };
   }, []);
 
@@ -38,8 +32,11 @@ export default function AskAISelectionBubble() {
     if (!selectedText) return;
 
     window.__selectedText = selectedText;
+
     window.__promptText = `Explain this text: ${selectedText}`;
+
     window.dispatchEvent(new CustomEvent("open-chatbot"));
+
     setVisible(false);
   };
 
@@ -47,9 +44,20 @@ export default function AskAISelectionBubble() {
 
   return (
     <button
-      className="ask-ai-bubble" 
-      style={{ top: pos.y, left: pos.x }}
       onClick={handleClick}
+      style={{
+        position: "absolute",
+        top: pos.y,
+        left: pos.x,
+        background: "#6a00ff",
+        color: "white",
+        padding: "6px 12px",
+        borderRadius: "8px",
+        border: "none",
+        cursor: "pointer",
+        zIndex: 9999,
+        boxShadow: "0 4px 12px rgba(0,0,0,0.25)",
+      }}
     >
       Ask AI 💬
     </button>
