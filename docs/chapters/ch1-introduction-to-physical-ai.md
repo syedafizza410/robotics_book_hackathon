@@ -41,10 +41,10 @@ Physical AI is no longer a futuristic concept but a tangible reality transformin
 
 ## Diagrams
 
-![diagram-placeholder](../../static/img/placeholder.png)
+![diagram-placeholder](../../static/img/chapter1diagram1.jpg)
 *Figure 1.1: Conceptual overview of Physical AI components.*
 
-![diagram-placeholder](../../static/img/placeholder.png)
+![diagram-placeholder](../../static/img/chapter1diagram2.jpg)
 *Figure 1.2: Timeline of key milestones in robotics and AI.*
 
 ## Summary
