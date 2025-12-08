@@ -108,7 +108,6 @@ function HomepageHeader() {
 export default function Home() {
   const scrollRef = useRef(null);
 
-  // animate progress
   useEffect(() => {
     const bars = document.querySelectorAll(`.${styles.progressBarFill}`);
     bars.forEach((bar, idx) => {
@@ -133,7 +132,6 @@ export default function Home() {
       <HomepageHeader />
       <main className={styles.cardsContainer}>
         
-        {/* LEFT EMOJI ARROW */}
         <button className={styles.arrowLeft} onClick={() => scroll('left')}>
           ◀
         </button>
@@ -153,7 +151,6 @@ export default function Home() {
           ))}
         </div>
 
-        {/* RIGHT EMOJI ARROW */}
         <button className={styles.arrowRight} onClick={() => scroll('right')}>
           ►
         </button>

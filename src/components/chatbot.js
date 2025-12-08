@@ -8,8 +8,8 @@ export default function Chatbot() {
   const [showGreeting, setShowGreeting] = useState(true);
   const [greetingText, setGreetingText] = useState("");
   const [isTyping, setIsTyping] = useState(false);
-  const [prefilled, setPrefilled] = useState(false); // prevents auto-send
-  const [rawSelectedText, setRawSelectedText] = useState(null); // store original selected text
+  const [prefilled, setPrefilled] = useState(false); 
+  const [rawSelectedText, setRawSelectedText] = useState(null); 
 
   const fullGreeting = "👋 Hi there! Ask me about our book";
   const msgEndRef = useRef(null);
@@ -44,15 +44,14 @@ export default function Chatbot() {
     return () => clearInterval(interval);
   }, [showGreeting]);
 
-  // Prefill input when bubble clicked
   useEffect(() => {
     const openHandler = () => {
       setOpen(true);
       const selectedText = window.__selectedText;
       if (selectedText) {
         setInput(`Explain this text: ${selectedText}`);
-        setPrefilled(true); // prevent auto-send
-        setRawSelectedText(selectedText); // save original text for backend
+        setPrefilled(true);
+        setRawSelectedText(selectedText);
         window.__selectedText = null;
       }
     };
@@ -61,7 +60,6 @@ export default function Chatbot() {
     return () => window.removeEventListener("open-chatbot", openHandler);
   }, []);
 
-  // Send message function
   const sendMessage = async () => {
     if (!input.trim()) return;
 
@@ -86,7 +84,7 @@ export default function Chatbot() {
         { role: "bot", content: data.answer, sources: data.sources },
       ]);
       setIsTyping(false);
-      setRawSelectedText(null); // reset after sending
+      setRawSelectedText(null); 
     } catch {
       setMessages((prev) => [
         ...prev,

@@ -1,5 +1,3 @@
-# app/services.py — FINAL 100% WORKING VERSION
-
 import cohere
 import google.generativeai as genai
 import os
@@ -50,7 +48,6 @@ Answer:"""
     model = genai.GenerativeModel("gemini-2.0-flash")
     return model.generate_content(prompt).text
 
-# YE FUNCTION ZAROORI HAI — ROUTES.PY ISKO IMPORT KAR RAHA HAI
 def handle_chat_query(query: str, selected_text: str = None):
     if selected_text and selected_text.strip():
         return answer_from_selected_text(selected_text, query)

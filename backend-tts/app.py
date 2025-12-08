@@ -7,14 +7,12 @@ from fastapi.middleware.cors import CORSMiddleware
 import os, tempfile
 from pathlib import Path
 
-# Load environment variables
 load_dotenv()
 GOOGLE_CREDS = os.getenv("GOOGLE_APPLICATION_CREDENTIALS")
 
 if not GOOGLE_CREDS:
     raise RuntimeError("GOOGLE_APPLICATION_CREDENTIALS not set in .env")
 
-# Resolve absolute path to credentials
 GOOGLE_CREDS_PATH = Path(GOOGLE_CREDS).resolve()
 
 if not GOOGLE_CREDS_PATH.exists():
@@ -25,10 +23,9 @@ print("Using Google TTS credentials:", GOOGLE_CREDS_PATH)
 
 app = FastAPI()
 
-# Enable CORS for frontend
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],  # replace with your frontend origin
+    allow_origins=["*"], 
     allow_methods=["*"],
     allow_headers=["*"],
 )
@@ -43,13 +40,11 @@ async def tts_post_endpoint(request: TTSRequest):
         raise HTTPException(status_code=400, detail="Text cannot be empty")
 
     try:
-        # Initialize TTS client
         try:
             client = texttospeech.TextToSpeechClient()
         except Exception as e:
             raise HTTPException(status_code=500, detail=f"Failed to initialize Google TTS client: {e}")
 
-        # Prepare TTS request
         synthesis_input = texttospeech.SynthesisInput(text=text)
         voice = texttospeech.VoiceSelectionParams(
             language_code="en-US",
@@ -59,7 +54,6 @@ async def tts_post_endpoint(request: TTSRequest):
             audio_encoding=texttospeech.AudioEncoding.MP3
         )
 
-        # Generate speech
         response = client.synthesize_speech(
             input=synthesis_input,
             voice=voice,

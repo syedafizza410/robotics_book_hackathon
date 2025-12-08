@@ -17,7 +17,6 @@
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
 }
 
-/* For readability concerns, you should choose a lighter palette in dark mode. */
 [data-theme='dark'] {
   --ifm-color-primary: #25c2a0;
   --ifm-color-primary-dark: #21af90;
@@ -42,9 +41,8 @@
   color: #7a37bc !important;
 }
 
-/* Sidebar background */
 .menu {
-  background-color: #131117; /* light purple */
+  background-color: #f0eef3 !important;
   padding: 1rem;
 }
 
@@ -56,34 +54,30 @@
 }
 
 .menu__link:hover {
-  color: #a269dc !important; /* lighter purple on hover */
+  color: #a269dc !important; 
 }
 
-/* Active link */
 .menu__link--active {
   color: #8a2be2 !important;
   font-weight: 700;
 }
 
 
-/* Headings in chapter */
 .markdown h1, .markdown h2, .markdown h3 {
   color: #560d8e !important;
-  scroll-margin-top: 80px; /* navbar ke liye */
+  scroll-margin-top: 80px; 
 }
 
-/* Paragraphs */
 .markdown p {
   font-size: 1rem;
   line-height: 1.6;
-  color: black; /* dark purple text */
+  color: black; 
 }
 
 [data-theme='dark'] .markdown p {
-  color: white; /* dark mode */
+  color: white; 
 }
 
-/* Links in content */
 .markdown a {
   color: #7b3db9 !important;
   text-decoration: underline;
@@ -93,13 +87,11 @@
   color: #a269dc !important;
 }
 
-/* TOC Heading */
 .table-of-contents__link--active {
   color: #a269dc !important;
   font-weight: 600;
 }
 
-/* TOC Normal Links */
 .table-of-contents__link {
   color: #7b3db9 !important;
   transition: 0.2s;
@@ -109,7 +101,6 @@
   color: #560d8e !important;
 }
 
-/* Breadcrumb links */
 .breadcrumbs__link {
   color: #a269dc !important;
   font-weight: 500;
@@ -120,7 +111,6 @@
   color: #560d8e !important;
 }
 
-/* Current page in breadcrumb */
 .breadcrumbs__item--active .breadcrumbs__link,
 .breadcrumbs__item--active {
   color: #560d8e !important;

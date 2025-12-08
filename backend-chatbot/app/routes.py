@@ -12,7 +12,6 @@ async def health_check():
 @router.post("/chat", response_model=ChatResponse)
 async def chat_endpoint(request: ChatRequest):
     try:
-        # Sirf answer return karo — sources abhi nahi hai
         answer = handle_chat_query(request.query, request.selected_text)
         return ChatResponse(answer=answer)
     except Exception as e:

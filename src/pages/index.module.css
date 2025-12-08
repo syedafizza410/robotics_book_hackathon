@@ -1,4 +1,3 @@
-/* Hero section */
 .heroBanner {
   padding: 4rem 0;
   text-align: center;
@@ -24,10 +23,6 @@
   }
 }
 
-/* ============================
-   Custom Smooth Scroll Slider
-   ============================ */
-
 .cardsContainer {
   padding: 2rem;
   position: relative;
@@ -47,7 +42,6 @@
 .scrollContainer::-webkit-scrollbar { display: none; }
 .scrollContainer { -ms-overflow-style: none; scrollbar-width: none; }
 
-/* arrows */
 .arrowLeft,
 .arrowRight {
   position: absolute;
@@ -74,7 +68,6 @@
 .arrowLeft { left: -10px; }
 .arrowRight { right: 1px; }
 
-/* cards */
 .card {
   background: #fff;
   border-radius: 12px;
@@ -134,7 +127,6 @@
   transition: width 1s ease-in-out;
 }
 
-/* responsive */
 
 @media screen and (max-width: 996px) {
   .card { width: 220px; }
@@ -151,9 +143,6 @@
   }
 }
 
-/* ============================
-   NEW — 4 Cards on Laptop
-   ============================ */
 @media screen and (min-width: 1200px) {
   .scrollContainer {
     gap: 5.5rem;

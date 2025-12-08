@@ -10,7 +10,6 @@ DATABASE_URL = os.getenv("DATABASE_URL")
 if not DATABASE_URL:
     raise ValueError("DATABASE_URL not set in .env")
 
-# YE LINE SABSE ZAROORI — Neon ke liye SSL fix
 engine = create_engine(
     DATABASE_URL,
     pool_pre_ping=True,
