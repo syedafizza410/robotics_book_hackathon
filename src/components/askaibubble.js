@@ -45,19 +45,24 @@ export default function AskAISelectionBubble() {
   return (
     <button
       onClick={handleClick}
-      style={{
-        position: "absolute",
-        top: pos.y,
-        left: pos.x,
-        background: "#6a00ff",
-        color: "white",
-        padding: "6px 12px",
-        borderRadius: "8px",
-        border: "none",
-        cursor: "pointer",
-        zIndex: 9999,
-        boxShadow: "0 4px 12px rgba(0,0,0,0.25)",
-      }}
+    style={{
+      position: "absolute",
+      top: pos.y,
+      left: Math.min(pos.x, window.innerWidth - 150), // keep bubble inside screen
+      background: "#6a00ff",
+      color: "white",
+      padding: "6px 12px",
+      borderRadius: "8px",
+      border: "none",
+      cursor: "pointer",
+      zIndex: 9999,
+      boxShadow: "0 4px 12px rgba(0,0,0,0.25)",
+      fontSize: "14px",
+      maxWidth: "140px",
+      whiteSpace: "nowrap",
+      overflow: "hidden",
+      textOverflow: "ellipsis",
+    }}
     >
       Ask AI 💬
     </button>
