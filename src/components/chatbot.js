@@ -70,8 +70,7 @@ export default function Chatbot() {
   setIsTyping(true);
 
   try {
-  const backendUrl = import.meta.env.DOCUSAURUS_CHATBACKEND_URL || "https://robotics-book-hackathon-backend.vercel.app";
-  const res = await fetch(`${backendUrl}/chat`, {
+  const res = await fetch("https://robotics-book-hackathon-backend.vercel.app/chat", {
   method: "POST",
   headers: { "Content-Type": "application/json" },
   body: JSON.stringify({
