@@ -13,9 +13,18 @@ async def health_check():
 async def chat_endpoint(request: ChatRequest):
     try:
         answer = handle_chat_query(request.query, request.selected_text)
+
+        if "quota exceeded" in answer.lower():
+            return ChatResponse(
+                answer="⚠️ API quota exceeded. Please try again after daily reset."
+            )
+
         return ChatResponse(answer=answer)
+
+    except HTTPException:
+        raise
     except Exception as e:
-        raise HTTPException(status_code=500, detail=str(e))
+        raise HTTPException(status_code=500, detail=f"Backend error: {str(e)}")
 
 @router.post("/ingest")
 async def ingest_endpoint(background_tasks: BackgroundTasks):
