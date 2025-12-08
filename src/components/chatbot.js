@@ -60,7 +60,7 @@ export default function Chatbot() {
     return () => window.removeEventListener("open-chatbot", openHandler);
   }, []);
 
-  const sendMessage = async () => {
+ const sendMessage = async () => {
   if (!input.trim()) return;
 
   const currentInput = input;
@@ -70,54 +70,33 @@ export default function Chatbot() {
   setIsTyping(true);
 
   try {
-    const res = await fetch(
-      `${process.env.REACT_APP_DOCUSAURUS_CHATBACKEND_URL}/chat`,
-      {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          query: currentInput,
-          selected_text: rawSelectedText || currentInput,
-        }),
-      }
-    );
+    const res = await fetch(`${process.env.REACT_APP_DOCUSAURUS_CHATBACKEND_URL}/chat`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        query: currentInput,
+        selected_text: rawSelectedText || currentInput,
+      }),
+    });
 
-    console.log("response status", res.status);
     const data = await res.json();
-    console.log("response data:", data);
 
-    if (
-      (data.answer && data.answer.toLowerCase().inculdes("quota")) || 
-      res.status === 429
-    ) {
-      setMessages((prev) => [
-        ...prev,
-        {
-          role: "bot",
-          content: data.answer},
-      ]);
-    } else if (!res.ok) {
-      setMessages((prev) => [
-        ...prev,
-        { role: "bot", content: "❌ Error connecting to backend." },
-      ]);
-    } else {
-      setMessages((prev) => [
-        ...prev,
-        { role: "bot", content: data.answer, sources: data.sources },
-      ]);
-    }
+    setMessages((prev) => [
+      ...prev,
+      { role: "bot", content: data.answer, sources: data.sources },
+    ]);
 
     setIsTyping(false);
     setRawSelectedText(null);
-  } catch {
+  } catch (err) {
+    console.error(err);
     setMessages((prev) => [
       ...prev,
       { role: "bot", content: "❌ Error connecting to backend." },
     ]);
     setIsTyping(false);
   }
-  };
+};
 
   return (
     <>
