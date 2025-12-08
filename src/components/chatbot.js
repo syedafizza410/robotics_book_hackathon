@@ -1,4 +1,3 @@
-const backendUrl = import.meta.env.DOCUSAURUS_CHATBACKEND_URL || "https://robotics-book-hackathon-backend.vercel.app";
 import React, { useState, useRef, useEffect } from "react";
 import styles from "./chatbot.module.css";
 
@@ -71,6 +70,7 @@ export default function Chatbot() {
   setIsTyping(true);
 
   try {
+  const backendUrl = import.meta.env.DOCUSAURUS_CHATBACKEND_URL || "https://robotics-book-hackathon-backend.vercel.app";
   const res = await fetch(`${backendUrl}/chat`, {
   method: "POST",
   headers: { "Content-Type": "application/json" },
