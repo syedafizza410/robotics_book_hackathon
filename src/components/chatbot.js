@@ -61,50 +61,64 @@ export default function Chatbot() {
   }, []);
 
   const sendMessage = async () => {
-    if (!input.trim()) return;
+  if (!input.trim()) return;
 
-    const currentInput = input;
-    setMessages((prev) => [...prev, { role: "user", content: currentInput }]);
-    setInput("");
-    setPrefilled(false);
-    setIsTyping(true);
+  const currentInput = input;
+  setMessages((prev) => [...prev, { role: "user", content: currentInput }]);
+  setInput("");
+  setPrefilled(false);
+  setIsTyping(true);
 
-    try {
-      const res = await fetch(`${process.env.REACT_APP_DOCUSAURUS_CHATBACKEND_URL}/chat`, {
+  try {
+    const res = await fetch(
+      `${process.env.REACT_APP_DOCUSAURUS_CHATBACKEND_URL}/chat`,
+      {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
           query: currentInput,
-          selected_text: rawSelectedText || currentInput, 
+          selected_text: rawSelectedText || currentInput,
         }),
-      });
-      const data = await res.json();
+      }
+    );
 
-      if (res.status === 429 || (data.detail && data.detail.inculdes ("quota"))) {
+    const data = await res.json();
+
+    if (
+      res.status === 429 ||
+      (data.detail &&
+        typeof data.detail === "string" &&
+        data.detail.toLowerCase().includes("quota"))
+    ) {
       setMessages((prev) => [
         ...prev,
-        { role: "bot", content: "⚠️ API quota exceeded. Please try again later or after daily reset.",},
+        {
+          role: "bot",
+          content:
+            "⚠️ API quota exceeded. Please try again later or after daily reset.",
+        },
       ]);
-     } else if (!res.ok) {
-        setMessages((prev) => [
-          ...prev,
-          {role: "bot", content: "❌ Error connecting to backend."},
-        ]);
-      }  else {
-          setMessages((prev) => [
-            ...prev,
-            {role: "bot", content: data.answer, sources: data.sources},
-          ]);
-        }
-      setIsTyping(false);
-      setRawSelectedText(null); 
-    } catch {
+    } else if (!res.ok) {
       setMessages((prev) => [
         ...prev,
         { role: "bot", content: "❌ Error connecting to backend." },
       ]);
-      setIsTyping(false);
+    } else {
+      setMessages((prev) => [
+        ...prev,
+        { role: "bot", content: data.answer, sources: data.sources },
+      ]);
     }
+
+    setIsTyping(false);
+    setRawSelectedText(null);
+  } catch {
+    setMessages((prev) => [
+      ...prev,
+      { role: "bot", content: "❌ Error connecting to backend." },
+    ]);
+    setIsTyping(false);
+  }
   };
 
   return (
