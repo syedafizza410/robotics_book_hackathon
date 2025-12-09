@@ -8,6 +8,11 @@
     "description": "Sidebar 'docs' içinde 'Chapters' kategorisi için etiket"
   },
 
+  "overview": {
+    "message": "Genel Bakış",
+    "description": "Overview page title (Turkish)"
+  },
+
   "ch1-introduction-to-physical-ai": {
     "message": "Fiziksel Yapay Zekaya Giriş",
     "description": "Chapter 1 title (Turkish)"

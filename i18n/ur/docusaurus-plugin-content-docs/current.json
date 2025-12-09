@@ -8,52 +8,57 @@
     "description": "سائیڈبار 'docs' میں 'Chapters' کیٹیگری کے لیے لیبل"
   },
 
-  "sidebar.docs.chapter1": {
-    "message": "باب 1 - فزیکل اے آئی کا تعارف",
-    "description": "Chapter 1 title"
+  "overview": {
+    "message": "جائزہ",
+    "description": "Overview page title (Urdu)"
   },
-  "sidebar.docs.chapter2": {
-    "message": "باب 2 - روبوٹکس کی بنیادیات (کائینی میٹکس اور ڈائنامکس)",
-    "description": "Chapter 2 title"
+
+  "ch1-introduction-to-physical-ai": {
+    "message": "فزیکل AI کا تعارف",
+    "description": "Chapter 1 title (Urdu)"
   },
-  "sidebar.docs.chapter3": {
-    "message": "باب 3 - ایکچیویٹرز اور سینسرز",
-    "description": "Chapter 3 title"
+  "ch2-robotics-fundamentals": {
+    "message": "روبوٹکس کے بنیادی اصول",
+    "description": "Chapter 2 title (Urdu)"
   },
-  "sidebar.docs.chapter4": {
-    "message": "باب 4 - روبوٹ کا مکینیکل ڈیزائن",
-    "description": "Chapter 4 title"
+  "ch3-actuators-and-sensors": {
+    "message": "ایکچویٹرز اور سینسرز",
+    "description": "Chapter 3 title (Urdu)"
   },
-  "sidebar.docs.chapter5": {
-    "message": "باب 5 - کنٹرول سسٹمز (PID اور جدید کنٹرول)",
-    "description": "Chapter 5 title"
+  "ch4-robot-mechanical-design": {
+    "message": "روبوٹ کا مکینیکل ڈیزائن",
+    "description": "Chapter 4 title (Urdu)"
   },
-  "sidebar.docs.chapter6": {
-    "message": "باب 6 - ایمبیڈڈ سسٹمز اور الیکٹرانکس",
-    "description": "Chapter 6 title"
+  "ch5-control-systems": {
+    "message": "کنٹرول سسٹمز",
+    "description": "Chapter 5 title (Urdu)"
   },
-  "sidebar.docs.chapter7": {
-    "message": "باب 7 - سافٹ ویئر آرکیٹیکچر اور ROS",
-    "description": "Chapter 7 title"
+  "ch6-embedded-systems": {
+    "message": "ایمبیڈڈ سسٹمز",
+    "description": "Chapter 6 title (Urdu)"
   },
-  "sidebar.docs.chapter8": {
-    "message": "باب 8 - روبوٹ پرسیپشن (کمپیوٹر وژن، SLAM، سینسر فیوژن)",
-    "description": "Chapter 8 title"
+  "ch7-software-and-ros": {
+    "message": "سافٹ ویئر آرکیٹیکچر اور ROS",
+    "description": "Chapter 7 title (Urdu)"
   },
-  "sidebar.docs.chapter9": {
-    "message": "باب 9 - موشن پلاننگ اور فیصلہ سازی کے لیے اے آئی",
-    "description": "Chapter 9 title"
+  "ch8-perception-computer-vision-slam": {
+    "message": "پرسپشن (کمپیوٹر ویژن اور SLAM)",
+    "description": "Chapter 8 title (Urdu)"
   },
-  "sidebar.docs.chapter10": {
-    "message": "باب 10 - انسانی مشابہ روبوٹس (Humanoids)",
-    "description": "Chapter 10 title"
+  "ch9-ai-motion-planning": {
+    "message": "موشن پلاننگ کے لیے AI",
+    "description": "Chapter 9 title (Urdu)"
   },
-  "sidebar.docs.chapter11": {
-    "message": "باب 11 - فزیکل اے آئی کے عملی پروجیکٹس",
-    "description": "Chapter 11 title"
+  "ch10-humanoid-robotics": {
+    "message": "ہیومانوئڈ روبوٹکس",
+    "description": "Chapter 10 title (Urdu)"
   },
-  "sidebar.docs.chapter12": {
-    "message": "باب 12 - مستقبل کے رجحانات اور اختتامی خلاصہ",
-    "description": "Chapter 12 title"
+  "ch11-human-robot-interaction": {
+    "message": "انسان-روبوٹ تعامل",
+    "description": "Chapter 11 title (Urdu)"
+  },
+  "ch12-humanoid-case-studies": {
+    "message": "ہیومانوئڈ کیس اسٹڈیز",
+    "description": "Chapter 12 title (Urdu)"
   }
 }
