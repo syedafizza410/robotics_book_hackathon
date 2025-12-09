@@ -9,7 +9,7 @@ import os, tempfile, json
 
 load_dotenv()
 
-GOOGLE_JSON = os.getenv("GOOGLE_KEY_JSON")
+GOOGLE_JSON = os.getenv("GOOGLE_APPLICATION_CREDENTIALS")
 
 if not GOOGLE_JSON:
     raise RuntimeError("GOOGLE_KEY_JSON not set in Vercel environment")
