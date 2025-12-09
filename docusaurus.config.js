@@ -103,10 +103,10 @@ const config = {
   position: 'left',
   label: 'Chapters',
 },
-          {
-  type: 'search',
-  position: 'right',
-},
+//           {
+//   type: 'search',
+//   position: 'right',
+// },
           // {to: '/blog', label: 'Blog', position: 'left'},
           {
             href: 'https://github.com/syedafizza410',
@@ -120,15 +120,15 @@ const config = {
       component: './src/theme/MDXContent.js',
     },
   },
-      algolia: {
-        appId: 'YOUR_APP_ID',
-        apiKey: 'YOUR_SEARCH_API_KEY',
-        indexName: 'YOUR_INDEX_NAME',
-        contextualSearch: true,
-        excludePages: ['/404'],
-        searchParameters: {},
-        searchPagePath: 'search',
-      },
+      // algolia: {
+      //   appId: 'YOUR_APP_ID',
+      //   apiKey: 'YOUR_SEARCH_API_KEY',
+      //   indexName: 'YOUR_INDEX_NAME',
+      //   contextualSearch: true,
+      //   excludePages: ['/404'],
+      //   searchParameters: {},
+      //   searchPagePath: 'search',
+      // },
       footer: {
         style: 'dark',
         links: [
