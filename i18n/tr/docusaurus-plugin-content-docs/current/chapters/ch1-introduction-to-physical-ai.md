@@ -41,10 +41,10 @@ Fiziksel Yapay Zeka artık fütüristik bir kavram değil, çeşitli sektörleri
 
 ## Diyagramlar
 
-![diagram-placeholder](../../static/img/chapter1diagram1.jpg)
+![diagram-placeholder](../../../../../static/img/chapter1diagram1.jpg)
 *Şekil 1.1: Fiziksel Yapay Zeka bileşenlerinin kavramsal genel görünümü.*
 
-![diagram-placeholder](../../static/img/chapter1diagram2.jpg)
+![diagram-placeholder](../../../../../static/img/chapter1diagram2.jpg)
 *Şekil 1.2: Robotik ve Yapay Zekadaki önemli kilometre taşlarının zaman çizelgesi.*
 
 ## Özet

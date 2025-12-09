@@ -56,10 +56,10 @@ AI روبوٹس کو ذہین فیصلے کرنے کے قابل بنانے می�
 
 ## ڈایاگرام
 
-![diagram-placeholder](../../static/img/placeholder.png)
+![diagram-placeholder](../../../../../static/img/placeholder.png)
 *شکل 9.1: ریپیڈلی ایکسپلورنگ رینڈم ٹری (RRT) پاتھ پلاننگ الگورتھم کی عکاسی۔*
 
-![diagram-placeholder](../../static/img/placeholder.png)
+![diagram-placeholder](../../../../../static/img/placeholder.png)
 *شکل 9.2: ایک موبائل روبوٹ کے لیے ایک سادہ رویے کے درخت کی مثال۔*
 
 ## خلاصہ

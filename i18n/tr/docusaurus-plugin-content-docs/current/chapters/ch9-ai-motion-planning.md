@@ -56,10 +56,10 @@ Yapay Zeka, özellikle dinamik ve belirsiz ortamlarda robotların akıllı karar
 
 ## Diyagramlar
 
-![diagram-placeholder](../../static/img/placeholder.png)
+![diagram-placeholder](../../../../../static/img/placeholder.png)
 *Şekil 9.1: Hızla Keşfeden Rastgele Ağaç (RRT) yol planlama algoritmasının bir çizimi.*
 
-![diagram-placeholder](../../static/img/placeholder.png)
+![diagram-placeholder](../../../../../static/img/placeholder.png)
 *Şekil 9.2: Bir mobil robot için basit bir davranış ağacının örneği.*
 
 ## Özet

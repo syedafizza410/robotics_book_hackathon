@@ -48,10 +48,10 @@ Tüm vücut kontrolü (WBC), hareket, denge ve manipülasyonu tek bir tutarlı �
 
 ## Diyagramlar
 
-![diagram-placeholder](../../static/img/placeholder.png)
+![diagram-placeholder](../../../../../static/img/placeholder.png)
 *Şekil 10.1: İki ayaklı bir robot için Sıfır Moment Noktası (ZMP) ve destek poligonunun çizimi.*
 
-![diagram-placeholder](../../static/img/placeholder.png)
+![diagram-placeholder](../../../../../static/img/placeholder.png)
 *Şekil 10.2: Bir insansı robot yürüyüş döngüsünün kavramsal gösterimi.*
 
 ## Özet

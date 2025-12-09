@@ -54,10 +54,10 @@ ROS روبوٹ سافٹ ویئر لکھنے کے لیے ایک لچکدار فر
 
 ## ڈایاگرام
 
-![diagram-placeholder](../../static/img/placeholder.png)
+![diagram-placeholder](../../../../../static/img/placeholder.png)
 *شکل 7.1: نوڈس اور ٹاپکس کو دکھانے والا ایک سادہ ROS کمپیوٹیشن گراف۔*
 
-![diagram-placeholder](../../static/img/placeholder.png)
+![diagram-placeholder](../../../../../static/img/placeholder.png)
 *شکل 7.2: ایک پرتوں والے روبوٹ سافٹ ویئر فن تعمیر کا اعلیٰ سطحی جائزہ۔*
 
 ## خلاصہ

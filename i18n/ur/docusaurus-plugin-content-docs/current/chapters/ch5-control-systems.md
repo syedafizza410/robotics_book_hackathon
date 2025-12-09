@@ -49,10 +49,10 @@ title: باب 5 - کنٹرول سسٹمز (PID + جدید کنٹرول)
 
 ## ڈایاگرام
 
-![diagram-placeholder](../../static/img/placeholder.png)
+![diagram-placeholder](../../../../../static/img/placeholder.png)
 *شکل 5.1: ایک عام فیڈ بیک کنٹرول سسٹم کا بلاک ڈایاگرام۔*
 
-![diagram-placeholder](../../static/img/placeholder.png)
+![diagram-placeholder](../../../../../static/img/placeholder.png)
 *شکل 5.2: P، I، اور D گینز کے اثرات کو ظاہر کرنے والے ردعمل کے منحنی خطوط ایک PID کنٹرولر میں۔*
 
 ## خلاصہ

@@ -63,10 +63,10 @@ title: باب 3 - ایکچوایٹرز اور سینسرز
 
 ## ڈایاگرام
 
-![diagram-placeholder](../../static/img/placeholder.png)
+![diagram-placeholder](../../../../../static/img/placeholder.png)
 *شکل 3.1: مختلف ایکچوایٹر اقسام اور ان کے کام کرنے کے اصولوں کا جائزہ۔*
 
-![diagram-placeholder](../../static/img/placeholder.png)
+![diagram-placeholder](../../../../../static/img/placeholder.png)
 *شکل 3.2: روبوٹک سینسرز کی ان کے کام کی بنیاد پر درجہ بندی۔*
 
 ## خلاصہ

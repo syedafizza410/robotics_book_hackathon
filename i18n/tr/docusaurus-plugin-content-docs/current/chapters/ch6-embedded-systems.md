@@ -57,10 +57,10 @@ Robotlar, dahili ve harici iletişim için çeşitli protokollere güvenir.
 
 ## Diyagramlar
 
-![diagram-placeholder](../../static/img/placeholder.png)
+![diagram-placeholder](../../../../../static/img/placeholder.png)
 *Şekil 6.1: Bir robottaki gömülü sistemin kavramsal blok diyagramı.*
 
-![diagram-placeholder](../../static/img/placeholder.png)
+![diagram-placeholder](../../../../../static/img/placeholder.png)
 *Şekil 6.2: DC motor kontrolü için temel H-köprü devresi.*
 
 ## Özet

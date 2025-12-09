@@ -58,10 +58,10 @@ Bu örnek olay incelemeleri, insansı robotların çeşitli potansiyelini vurgul
 
 ## Diyagramlar
 
-![diagram-placeholder](../../static/img/placeholder.png)
+![diagram-placeholder](../../../../../static/img/placeholder.png)
 *Şekil 12.1: Tartışılan temel insansı robotların görsel karşılaştırması.*
 
-![diagram-placeholder](../../static/img/placeholder.png)
+![diagram-placeholder](../../../../../static/img/placeholder.png)
 *Şekil 12.2: İnsansı platformlar arasındaki temel teknik farklılaştırıcıları gösteren bir diyagram.*
 
 ## Özet

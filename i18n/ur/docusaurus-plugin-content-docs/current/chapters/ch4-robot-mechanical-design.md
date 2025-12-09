@@ -52,10 +52,10 @@ title: باب 4 - روبوٹ مکینیکل ڈیزائن
 
 ## ڈایاگرام
 
-![diagram-placeholder](../../static/img/placeholder.png)
+![diagram-placeholder](../../../../../static/img/placeholder.png)
 *شکل 4.1: سیریل اور متوازی ہیرا پھیری کرنے والے ترتیبوں کا موازنہ۔*
 
-![diagram-placeholder](../../static/img/placeholder.png)
+![diagram-placeholder](../../../../../static/img/placeholder.png)
 *شکل 4.2: عام روبوٹک جوائنٹ اقسام (ریوولٹ اور پریزمیاتی) کی عکاسی۔*
 
 ## خلاصہ

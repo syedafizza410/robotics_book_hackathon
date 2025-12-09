@@ -46,10 +46,10 @@ title: باب 2 - روبوٹکس کے بنیادی اصول (کائیمیٹکس 
 
 ## ڈایا گرام
 
-![diagram-placeholder](../../static/img/chapter2diagram1.jpg)
+![diagram-placeholder](../../../../../static/img/chapter2diagram1.jpg)
 *شکل 2.1: فارورڈ کائیمیٹکس کا مظاہرہ کرنے والے 2-DOF روبوٹک بازو کی مثال۔*
 
-![diagram-placeholder](../../static/img/placeholder.png)
+![diagram-placeholder](../../../../../static/img/placeholder.png)
 *شکل 2.2: ڈائنامک تجزیہ کے لیے روبوٹ لنک کا فری-باڈی ڈایا گرام۔*
 
 ## خلاصہ

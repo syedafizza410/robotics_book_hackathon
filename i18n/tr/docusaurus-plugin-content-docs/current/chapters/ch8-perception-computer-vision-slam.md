@@ -49,10 +49,10 @@ Sensör füzyonu, birden fazla sensörden gelen verileri birleştirerek, tek tek
 
 ## Diyagramlar
 
-![diagram-placeholder](../../static/img/placeholder.png)
+![diagram-placeholder](../../../../../static/img/placeholder.png)
 *Şekil 8.1: Görsel bir SLAM sisteminin temel boru hattı.*
 
-![diagram-placeholder](../../static/img/placeholder.png)
+![diagram-placeholder](../../../../../static/img/placeholder.png)
 *Şekil 8.2: Lidar ve Kamera verilerini birleştiren sensör füzyonunun örneği.*
 
 ## Özet

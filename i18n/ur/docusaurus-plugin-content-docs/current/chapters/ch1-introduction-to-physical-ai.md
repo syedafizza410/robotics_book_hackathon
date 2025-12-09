@@ -41,10 +41,10 @@ title: باب 1 - فزیکل AI کا تعارف
 
 ## ڈایا گرام
 
-![diagram-placeholder](../../static/img/chapter1diagram1.jpg)
+![diagram-placeholder](../../../../../static/img/chapter1diagram1.jpg)
 *شکل 1.1: فزیکل AI اجزاء کا تصوراتی جائزہ۔*
 
-![diagram-placeholder](../../static/img/chapter1diagram2.jpg)
+![diagram-placeholder](../../../../../static/img/chapter1diagram2.jpg)
 *شکل 1.2: روبوٹکس اور AI میں کلیدی سنگ میلوں کی ٹائم لائن۔*
 
 ## خلاصہ

@@ -6,5 +6,54 @@
   "sidebar.docs.category.Chapters": {
     "message": "Bölümler",
     "description": "Sidebar 'docs' içinde 'Chapters' kategorisi için etiket"
+  },
+
+  "ch1-introduction-to-physical-ai": {
+    "message": "Fiziksel Yapay Zekaya Giriş",
+    "description": "Chapter 1 title (Turkish)"
+  },
+  "ch2-robotics-fundamentals": {
+    "message": "Robotik Temelleri",
+    "description": "Chapter 2 title (Turkish)"
+  },
+  "ch3-actuators-and-sensors": {
+    "message": "Aktüatörler ve Sensörler",
+    "description": "Chapter 3 title (Turkish)"
+  },
+  "ch4-robot-mechanical-design": {
+    "message": "Robot Mekanik Tasarımı",
+    "description": "Chapter 4 title (Turkish)"
+  },
+  "ch5-control-systems": {
+    "message": "Kontrol Sistemleri",
+    "description": "Chapter 5 title (Turkish)"
+  },
+  "ch6-embedded-systems": {
+    "message": "Gömülü Sistemler",
+    "description": "Chapter 6 title (Turkish)"
+  },
+  "ch7-software-and-ros": {
+    "message": "Yazılım Mimarisi ve ROS",
+    "description": "Chapter 7 title (Turkish)"
+  },
+  "ch8-perception-computer-vision-slam": {
+    "message": "Algı (Bilgisayarlı Görü ve SLAM)",
+    "description": "Chapter 8 title (Turkish)"
+  },
+  "ch9-ai-motion-planning": {
+    "message": "Hareket Planlaması için Yapay Zeka",
+    "description": "Chapter 9 title (Turkish)"
+  },
+  "ch10-humanoid-robotics": {
+    "message": "İnsansı Robotik",
+    "description": "Chapter 10 title (Turkish)"
+  },
+  "ch11-human-robot-interaction": {
+    "message": "İnsan-Robot Etkileşimi",
+    "description": "Chapter 11 title (Turkish)"
+  },
+  "ch12-humanoid-case-studies": {
+    "message": "İnsansı Robot Vakaları",
+    "description": "Chapter 12 title (Turkish)"
   }
 }

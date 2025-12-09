@@ -60,10 +60,10 @@ title: باب 11 - انسانی-روبوٹ تعامل
 
 ## ڈایاگرام
 
-![diagram-placeholder](../../static/img/placeholder.png)
+![diagram-placeholder](../../../../../static/img/placeholder.png)
 *شکل 11.1: انسانی-روبوٹ تعامل کے مختلف طریقوں کو واضح کرنے والا ایک فریم ورک۔*
 
-![diagram-placeholder](../../static/img/placeholder.png)
+![diagram-placeholder](../../../../../static/img/placeholder.png)
 *شکل 11.2: روبوٹ خود مختاری، انسانی کنٹرول، اور HRI میں اعتماد کے درمیان تعلق۔*
 
 ## خلاصہ

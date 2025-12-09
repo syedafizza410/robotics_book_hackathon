@@ -49,10 +49,10 @@ SLAM ایک نامعلوم ماحول کا نقشہ بنانے یا اسے اپ 
 
 ## ڈایاگرام
 
-![diagram-placeholder](../../static/img/placeholder.png)
+![diagram-placeholder](../../../../../static/img/placeholder.png)
 *شکل 8.1: ایک ویژول SLAM سسٹم کے لیے بنیادی پائپ لائن۔*
 
-![diagram-placeholder](../../static/img/placeholder.png)
+![diagram-placeholder](../../../../../static/img/placeholder.png)
 *شکل 8.2: سینسر فیوژن کی مثال جو لائیدار اور کیمرہ ڈیٹا کو یکجا کرتی ہے۔*
 
 ## خلاصہ

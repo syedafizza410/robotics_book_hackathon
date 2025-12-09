@@ -60,10 +60,10 @@ Fiziksel Yapay Zeka robotları günlük hayatımızda, fabrikalardan ve hastanel
 
 ## Diyagramlar
 
-![diagram-placeholder](../../static/img/placeholder.png)
+![diagram-placeholder](../../../../../static/img/placeholder.png)
 *Şekil 11.1: Farklı insan-robot etkileşimi modalitelerini gösteren bir çerçeve.*
 
-![diagram-placeholder](../../static/img/placeholder.png)
+![diagram-placeholder](../../../../../static/img/placeholder.png)
 *Şekil 11.2: HRI'da robot özerkliği, insan kontrolü ve güven arasındaki ilişki.*
 
 ## Özet

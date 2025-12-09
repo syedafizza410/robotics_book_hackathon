@@ -57,10 +57,10 @@ title: باب 6 - ایمبیڈڈ سسٹمز اور الیکٹرانکس
 
 ## ڈایاگرام
 
-![diagram-placeholder](../../static/img/placeholder.png)
+![diagram-placeholder](../../../../../static/img/placeholder.png)
 *شکل 6.1: ایک روبوٹ میں ایمبیڈڈ سسٹم کا تصوراتی بلاک ڈایاگرام۔*
 
-![diagram-placeholder](../../static/img/placeholder.png)
+![diagram-placeholder](../../../../../static/img/placeholder.png)
 *شکل 6.2: DC موٹر کنٹرول کے لیے بنیادی H-برج سرکٹ۔*
 
 ## خلاصہ

@@ -6,5 +6,54 @@
   "sidebar.docs.category.Chapters": {
     "message": "ابواب",
     "description": "سائیڈبار 'docs' میں 'Chapters' کیٹیگری کے لیے لیبل"
+  },
+
+  "sidebar.docs.chapter1": {
+    "message": "باب 1 - فزیکل اے آئی کا تعارف",
+    "description": "Chapter 1 title"
+  },
+  "sidebar.docs.chapter2": {
+    "message": "باب 2 - روبوٹکس کی بنیادیات (کائینی میٹکس اور ڈائنامکس)",
+    "description": "Chapter 2 title"
+  },
+  "sidebar.docs.chapter3": {
+    "message": "باب 3 - ایکچیویٹرز اور سینسرز",
+    "description": "Chapter 3 title"
+  },
+  "sidebar.docs.chapter4": {
+    "message": "باب 4 - روبوٹ کا مکینیکل ڈیزائن",
+    "description": "Chapter 4 title"
+  },
+  "sidebar.docs.chapter5": {
+    "message": "باب 5 - کنٹرول سسٹمز (PID اور جدید کنٹرول)",
+    "description": "Chapter 5 title"
+  },
+  "sidebar.docs.chapter6": {
+    "message": "باب 6 - ایمبیڈڈ سسٹمز اور الیکٹرانکس",
+    "description": "Chapter 6 title"
+  },
+  "sidebar.docs.chapter7": {
+    "message": "باب 7 - سافٹ ویئر آرکیٹیکچر اور ROS",
+    "description": "Chapter 7 title"
+  },
+  "sidebar.docs.chapter8": {
+    "message": "باب 8 - روبوٹ پرسیپشن (کمپیوٹر وژن، SLAM، سینسر فیوژن)",
+    "description": "Chapter 8 title"
+  },
+  "sidebar.docs.chapter9": {
+    "message": "باب 9 - موشن پلاننگ اور فیصلہ سازی کے لیے اے آئی",
+    "description": "Chapter 9 title"
+  },
+  "sidebar.docs.chapter10": {
+    "message": "باب 10 - انسانی مشابہ روبوٹس (Humanoids)",
+    "description": "Chapter 10 title"
+  },
+  "sidebar.docs.chapter11": {
+    "message": "باب 11 - فزیکل اے آئی کے عملی پروجیکٹس",
+    "description": "Chapter 11 title"
+  },
+  "sidebar.docs.chapter12": {
+    "message": "باب 12 - مستقبل کے رجحانات اور اختتامی خلاصہ",
+    "description": "Chapter 12 title"
   }
 }

@@ -46,10 +46,10 @@ Robotik, çeşitli koordinat sistemlerine (dünya, taban, eklem, uç-efektör) b
 
 ## Diyagramlar
 
-![diagram-placeholder](../../static/img/chapter2diagram1.jpg)
+![diagram-placeholder](../../../../../static/img/chapter2diagram1.jpg)
 *Şekil 2.1: İleri kinematiği gösteren 2-DOF robot kolunun bir illüstrasyonu.*
 
-![diagram-placeholder](../../static/img/placeholder.png)
+![diagram-placeholder](../../../../../static/img/placeholder.png)
 *Şekil 2.2: Dinamik analiz için bir robot bağlantısının serbest cisim diyagramı.*
 
 ## Özet

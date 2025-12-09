@@ -48,10 +48,10 @@ title: باب 10 - ہیومنائڈ روبوٹکس (دو پیروں سے چلن�
 
 ## ڈایاگرام
 
-![diagram-placeholder](../../static/img/placeholder.png)
+![diagram-placeholder](../../../../../static/img/placeholder.png)
 *شکل 10.1: دو پیروں والے روبوٹ کے لیے زیرو مومنٹ پوائنٹ (ZMP) اور سپورٹ پولی گون کی عکاسی۔*
 
-![diagram-placeholder](../../static/img/placeholder.png)
+![diagram-placeholder](../../../../../static/img/placeholder.png)
 *شکل 10.2: ہیومنائڈ روبوٹ گیت سائیکل کی تصوراتی نمائندگی۔*
 
 ## خلاصہ

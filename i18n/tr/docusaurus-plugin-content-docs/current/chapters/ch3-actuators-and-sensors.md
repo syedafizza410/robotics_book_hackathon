@@ -63,10 +63,10 @@ Bu sensörler, robotun dış ortamı hakkında bilgi sağlar.
 
 ## Diyagramlar
 
-![diagram-placeholder](../../static/img/placeholder.png)
+![diagram-placeholder](../../../../../static/img/placeholder.png)
 *Şekil 3.1: Farklı aktüatör türlerine ve çalışma prensiplerine genel bakış.*
 
-![diagram-placeholder](../../static/img/placeholder.png)
+![diagram-placeholder](../../../../../static/img/placeholder.png)
 *Şekil 3.2: Robotik sensörlerin işlevlerine göre sınıflandırılması.*
 
 ## Özet

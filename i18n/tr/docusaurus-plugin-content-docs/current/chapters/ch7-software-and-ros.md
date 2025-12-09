@@ -54,10 +54,10 @@ ROS, robot yazılımı yazmak için esnek bir çerçevedir. Çok çeşitli robot
 
 ## Diyagramlar
 
-![diagram-placeholder](../../static/img/placeholder.png)
+![diagram-placeholder](../../../../../static/img/placeholder.png)
 *Şekil 7.1: Düğümleri ve konuları gösteren basitleştirilmiş bir ROS hesaplama grafiği.*
 
-![diagram-placeholder](../../static/img/placeholder.png)
+![diagram-placeholder](../../../../../static/img/placeholder.png)
 *Şekil 7.2: Katmanlı bir robot yazılım mimarisinin üst düzey genel görünümü.*
 
 ## Özet

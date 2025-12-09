@@ -49,10 +49,10 @@ Daha karmaşık robotik sistemler ve görevler için genellikle gelişmiş kontr
 
 ## Diyagramlar
 
-![diagram-placeholder](../../static/img/placeholder.png)
+![diagram-placeholder](../../../../../static/img/placeholder.png)
 *Şekil 5.1: Genel bir geri beslemeli kontrol sisteminin blok diyagramı.*
 
-![diagram-placeholder](../../static/img/placeholder.png)
+![diagram-placeholder](../../../../../static/img/placeholder.png)
 *Şekil 5.2: Bir PID kontrolöründe P, I ve D kazançlarının etkilerini gösteren yanıt eğrileri.*
 
 ## Özet

@@ -52,10 +52,10 @@ Tasarım aşamasında üretim süreçlerini (örneğin, işleme, 3D baskı, dök
 
 ## Diyagramlar
 
-![diagram-placeholder](../../static/img/placeholder.png)
+![diagram-placeholder](../../../../../static/img/placeholder.png)
 *Şekil 4.1: Seri ve paralel manipülatör yapılandırmalarının karşılaştırılması.*
 
-![diagram-placeholder](../../static/img/placeholder.png)
+![diagram-placeholder](../../../../../static/img/placeholder.png)
 *Şekil 4.2: Ortak robotik eklem türlerinin (döner ve prizmatik) çizimleri.*
 
 ## Özet

@@ -58,10 +58,10 @@ title: باب 12 - موجودہ ہیومنائڈز کے کیس اسٹڈیز
 
 ## ڈایاگرام
 
-![diagram-placeholder](../../static/img/placeholder.png)
+![diagram-placeholder](../../../../../static/img/placeholder.png)
 *شکل 12.1: زیر بحث کلیدی ہیومنائڈ روبوٹس کا بصری موازنہ۔*
 
-![diagram-placeholder](../../static/img/placeholder.png)
+![diagram-placeholder](../../../../../static/img/placeholder.png)
 *شکل 12.2: ہیومنائڈ پلیٹ فارمز میں کلیدی تکنیکی تفریق کاروں کو واضح کرنے والا ایک ڈایاگرام۔*
 
 ## خلاصہ
