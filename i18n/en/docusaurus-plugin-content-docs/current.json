@@ -1,0 +1,10 @@
+{
+  "version.label": {
+    "message": "1.0.0",
+    "description": "The label for version current"
+  },
+  "sidebar.docs.category.Chapters": {
+    "message": "Chapters",
+    "description": "The label for category 'Chapters' in sidebar 'docs'"
+  }
+}

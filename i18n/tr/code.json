@@ -1,0 +1,133 @@
+{
+  "theme.ErrorPageContent.title": {
+    "message": "Bu sayfa çöktü.",
+    "description": "Sayfa çöktüğünde fallback sayfa başlığı"
+  },
+  "theme.BackToTopButton.buttonAriaLabel": {
+    "message": "Başa kaydır",
+    "description": "Back to top düğmesi için ARIA etiketi"
+  },
+  "theme.blog.archive.title": {
+    "message": "Arşiv",
+    "description": "Blog arşiv sayfa başlığı"
+  },
+  "theme.blog.archive.description": {
+    "message": "Arşiv",
+    "description": "Blog arşiv sayfa açıklaması"
+  },
+  "theme.blog.paginator.navAriaLabel": {
+    "message": "Blog liste sayfası navigasyonu",
+    "description": "Blog sayfalama için ARIA etiketi"
+  },
+  "theme.blog.paginator.newerEntries": {
+    "message": "Yeni yazılar",
+    "description": "Yeni blog gönderilerine gitmek için etiket"
+  },
+  "theme.blog.paginator.olderEntries": {
+    "message": "Eski yazılar",
+    "description": "Eski blog gönderilerine gitmek için etiket"
+  },
+  "theme.blog.post.paginator.navAriaLabel": {
+    "message": "Blog gönderisi sayfa navigasyonu",
+    "description": "Blog gönderisi sayfalama için ARIA etiketi"
+  },
+  "theme.blog.post.paginator.newerPost": {
+    "message": "Yeni gönderi",
+    "description": "Yeni/pönceki blog gönderisine gitmek için düğme etiketi"
+  },
+  "theme.blog.post.paginator.olderPost": {
+    "message": "Eski gönderi",
+    "description": "Eski/sonraki blog gönderisine gitmek için düğme etiketi"
+  },
+  "theme.tags.tagsPageLink": {
+    "message": "Tüm etiketleri gör",
+    "description": "Etiket listesi sayfası link etiketi"
+  },
+  "theme.colorToggle.ariaLabel.mode.system": {
+    "message": "sistem modu",
+    "description": "Sistem renk modu adı"
+  },
+  "theme.colorToggle.ariaLabel.mode.light": {
+    "message": "aydınlık modu",
+    "description": "Light color mode adı"
+  },
+  "theme.colorToggle.ariaLabel.mode.dark": {
+    "message": "karanlık modu",
+    "description": "Dark color mode adı"
+  },
+  "theme.colorToggle.ariaLabel": {
+    "message": "Karanlık ve aydınlık mod arasında geçiş yap (şu anda {mode})",
+    "description": "Renk modu toggle için ARIA etiketi"
+  },
+  "theme.docs.breadcrumbs.navAriaLabel": {
+    "message": "Breadcrumbs",
+    "description": "Breadcrumbs için ARIA etiketi"
+  },
+  "theme.docs.DocCard.categoryDescription.plurals": {
+    "message": "1 öğe|{count} öğeler",
+    "description": "Kategori kartı için varsayılan açıklama"
+  },
+  "theme.docs.paginator.navAriaLabel": {
+    "message": "Docs sayfaları",
+    "description": "Docs sayfalama için ARIA etiketi"
+  },
+  "theme.docs.paginator.previous": {
+    "message": "Önceki",
+    "description": "Önceki doc sayfasına gitmek için etiket"
+  },
+  "theme.docs.paginator.next": {
+    "message": "Sonraki",
+    "description": "Sonraki doc sayfasına gitmek için etiket"
+  },
+  "theme.docs.versionBadge.label": {
+    "message": "Sürüm: {versionLabel}"
+  },
+  "theme.docs.tagDocListPageTitle.nDocsTagged": {
+    "message": "Bir doc etiketlendi|{count} docs etiketlendi",
+    "description": "Pluralized label for docs tagged"
+  },
+  "theme.docs.tagDocListPageTitle": {
+    "message": "{nDocsTagged} '{tagName}' ile",
+    "description": "Docs tag sayfası başlığı"
+  },
+  "theme.docs.versions.unreleasedVersionLabel": {
+    "message": "{siteTitle} {versionLabel} sürümü için yayınlanmamış dokümantasyon.",
+    "description": "Unreleased doc version label"
+  },
+  "theme.docs.versions.unmaintainedVersionLabel": {
+    "message": "{siteTitle} {versionLabel} sürümü için artık aktif olarak bakılmayan dokümantasyon.",
+    "description": "Unmaintained doc version label"
+  },
+  "theme.docs.versions.latestVersionSuggestionLabel": {
+    "message": "Güncel dokümantasyon için {latestVersionLink} sayfasına bakın ({versionLabel}).",
+    "description": "User to check latest version label"
+  },
+  "theme.docs.versions.latestVersionLinkLabel": {
+    "message": "son sürüm",
+    "description": "Latest version link label"
+  },
+  "theme.common.editThisPage": {
+    "message": "Bu sayfayı düzenle",
+    "description": "Current page edit link label"
+  },
+  "theme.CodeBlock.copy": {
+    "message": "Kopyala",
+    "description": "Code block copy button label"
+  },
+  "theme.CodeBlock.copied": {
+    "message": "Kopyalandı",
+    "description": "Code block copied button label"
+  },
+  "theme.CodeBlock.copyButtonAriaLabel": {
+    "message": "Kodu panoya kopyala",
+    "description": "Code block copy button ARIA label"
+  },
+  "theme.blog.post.readingTime.plurals": {
+    "message": "Bir dakika okunacak|{readingTime} dakika okunacak",
+    "description": "Reading time pluralized label"
+  },
+  "theme.CodeBlock.wordWrapToggle": {
+    "message": "Kelime kaydırmayı değiştir",
+    "description": "Code block word wrap button title"
+  }
+}

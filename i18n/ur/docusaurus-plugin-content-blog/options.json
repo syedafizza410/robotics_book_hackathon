@@ -1,0 +1,14 @@
+{
+  "title": {
+    "message": "بلاگ",
+    "description": "SEO میں بلاگ کے لیے عنوان"
+  },
+  "description": {
+    "message": "بلاگ",
+    "description": "SEO میں بلاگ کے لیے وضاحت"
+  },
+  "sidebar.title": {
+    "message": "حال ہی میں پوسٹس",
+    "description": "بائیں سائیڈ بار کے لیے لیبل"
+  }
+}

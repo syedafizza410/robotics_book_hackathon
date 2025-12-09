@@ -1,0 +1,38 @@
+{
+  "link.title.Docs": {
+    "message": "Bölümler",
+    "description": "Alt bilgi sütununda 'Docs' başlıklı linkin başlığı"
+  },
+  "link.title.Community": {
+    "message": "Topluluk",
+    "description": "Alt bilgi sütununda 'Community' başlıklı linkin başlığı"
+  },
+  "link.title.More": {
+    "message": "Daha Fazla",
+    "description": "Alt bilgi sütununda 'More' başlıklı linkin başlığı"
+  },
+  "link.item.label.Chapters": {
+    "message": "Bölümler",
+    "description": "/docs'e bağlanan alt bilgi linkinin etiketi"
+  },
+  "link.item.label.Linkedin": {
+    "message": "Linkedin",
+    "description": "Alt bilgi linkinin LinkedIn profiline bağlanan etiketi"
+  },
+  "link.item.label.Discord": {
+    "message": "Discord",
+    "description": "Alt bilgi linkinin Discord daveti ile bağlanan etiketi"
+  },
+  "link.item.label.X": {
+    "message": "X",
+    "description": "Alt bilgi linkinin X profiline bağlanan etiketi"
+  },
+  "link.item.label.GitHub": {
+    "message": "GitHub",
+    "description": "Alt bilgi linkinin GitHub profiline bağlanan etiketi"
+  },
+  "copyright": {
+    "message": "Telif Hakkı © 2025 Projem",
+    "description": "Alt bilginin telif hakkı metni"
+  }
+}

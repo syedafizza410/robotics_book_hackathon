@@ -1,0 +1,193 @@
+{
+  "theme.ErrorPageContent.title": {
+    "message": "یہ صفحہ کریش ہوگیا۔",
+    "description": "Fallback صفحے کا عنوان جب صفحہ کریش ہو جائے"
+  },
+  "theme.BackToTopButton.buttonAriaLabel": {
+    "message": "اوپر سکرول کریں",
+    "description": "Back to top بٹن کے لیے ARIA لیبل"
+  },
+  "theme.blog.archive.title": {
+    "message": "آرکائیو",
+    "description": "بلاگ آرکائیو صفحے کا عنوان"
+  },
+  "theme.blog.archive.description": {
+    "message": "آرکائیو",
+    "description": "بلاگ آرکائیو صفحے کی وضاحت"
+  },
+  "theme.blog.paginator.navAriaLabel": {
+    "message": "بلاگ فہرست صفحہ نیویگیشن",
+    "description": "بلاگ pagination کے لیے ARIA لیبل"
+  },
+  "theme.blog.paginator.newerEntries": {
+    "message": "نئے پوسٹس",
+    "description": "نئے بلاگ پوسٹس پر جانے کے لیے لیبل"
+  },
+  "theme.blog.paginator.olderEntries": {
+    "message": "پرانے پوسٹس",
+    "description": "پرانے بلاگ پوسٹس پر جانے کے لیے لیبل"
+  },
+  "theme.blog.post.paginator.navAriaLabel": {
+    "message": "بلاگ پوسٹ صفحہ نیویگیشن",
+    "description": "بلاگ پوسٹ pagination کے لیے ARIA لیبل"
+  },
+  "theme.blog.post.paginator.newerPost": {
+    "message": "نئی پوسٹ",
+    "description": "نئی/پچھلی بلاگ پوسٹ پر جانے کے لیے بٹن لیبل"
+  },
+  "theme.blog.post.paginator.olderPost": {
+    "message": "پرانی پوسٹ",
+    "description": "پرانے/اگلی بلاگ پوسٹ پر جانے کے لیے بٹن لیبل"
+  },
+  "theme.tags.tagsPageLink": {
+    "message": "تمام ٹیگز دیکھیں",
+    "description": "ٹیگ لسٹ پیج کے لنک کا لیبل"
+  },
+  "theme.colorToggle.ariaLabel.mode.system": {
+    "message": "سسٹم موڈ",
+    "description": "سسٹم کلر موڈ کا نام"
+  },
+  "theme.colorToggle.ariaLabel.mode.light": {
+    "message": "لائٹ موڈ",
+    "description": "لائٹ کلر موڈ کا نام"
+  },
+  "theme.colorToggle.ariaLabel.mode.dark": {
+    "message": "ڈارک موڈ",
+    "description": "ڈارک کلر موڈ کا نام"
+  },
+  "theme.colorToggle.ariaLabel": {
+    "message": "ڈارک اور لائٹ موڈ کے درمیان تبدیل کریں (حال میں {mode})",
+    "description": "کلر موڈ ٹوگل کے لیے ARIA لیبل"
+  },
+  "theme.docs.breadcrumbs.navAriaLabel": {
+    "message": "Breadcrumbs",
+    "description": "Breadcrumbs کے لیے ARIA لیبل"
+  },
+  "theme.docs.DocCard.categoryDescription.plurals": {
+    "message": "1 آئٹم|{count} آئٹمز",
+    "description": "کیٹیگری کارڈ کے لیے default description"
+  },
+  "theme.docs.paginator.navAriaLabel": {
+    "message": "Docs صفحات",
+    "description": "Docs pagination کے لیے ARIA لیبل"
+  },
+  "theme.docs.paginator.previous": {
+    "message": "پچھلا",
+    "description": "پچھلے doc پر جانے کا لیبل"
+  },
+  "theme.docs.paginator.next": {
+    "message": "اگلا",
+    "description": "اگلے doc پر جانے کا لیبل"
+  },
+  "theme.docs.versionBadge.label": {
+    "message": "ورژن: {versionLabel}"
+  },
+  "theme.docs.tagDocListPageTitle.nDocsTagged": {
+    "message": "ایک doc ٹیگ شدہ|{count} docs ٹیگ شدہ",
+    "description": "Pluralized label for docs tagged"
+  },
+  "theme.docs.tagDocListPageTitle": {
+    "message": "{nDocsTagged} '{tagName}' کے ساتھ",
+    "description": "Docs tag کے صفحے کا عنوان"
+  },
+  "theme.docs.versions.unreleasedVersionLabel": {
+    "message": "یہ {siteTitle} {versionLabel} ورژن کے لیے غیر ریلیز شدہ دستاویزات ہیں۔",
+    "description": "Unreleased doc version کے لیے label"
+  },
+  "theme.docs.versions.unmaintainedVersionLabel": {
+    "message": "یہ {siteTitle} {versionLabel} ورژن کی دستاویزات ہیں، جو اب فعال طور پر maintained نہیں ہیں۔",
+    "description": "Unmaintained doc version کے لیے label"
+  },
+  "theme.docs.versions.latestVersionSuggestionLabel": {
+    "message": "اپ ڈیٹ شدہ دستاویزات کے لیے {latestVersionLink} دیکھیں ({versionLabel})۔",
+    "description": "User کو latest version چیک کرنے کے لیے label"
+  },
+  "theme.docs.versions.latestVersionLinkLabel": {
+    "message": "حالیہ ورژن",
+    "description": "Latest version link کا label"
+  },
+  "theme.common.editThisPage": {
+    "message": "اس صفحے میں ترمیم کریں",
+    "description": "موجودہ صفحے کو ایڈٹ کرنے کے لنک کا لیبل"
+  },
+  "theme.lastUpdated.atDate": {
+    "message": " پر {date}",
+    "description": "صفحے کی آخری اپڈیٹ کی تاریخ کے لیے الفاظ"
+  },
+  "theme.lastUpdated.byUser": {
+    "message": " بذریعہ {user}",
+    "description": "صفحے کو کس نے اپڈیٹ کیا"
+  },
+  "theme.lastUpdated.lastUpdatedAtBy": {
+    "message": "آخری اپڈیٹ {atDate}{byUser}",
+    "description": "صفحے کی آخری اپڈیٹ کی تفصیل"
+  },
+  "theme.common.headingLinkTitle": {
+    "message": "{heading} کا ڈائریکٹ لنک",
+    "description": "Heading کے لیے link کا title"
+  },
+  "theme.NotFound.title": {
+    "message": "صفحہ نہیں ملا",
+    "description": "404 صفحے کا عنوان"
+  },
+  "theme.navbar.mobileVersionsDropdown.label": {
+    "message": "ورژنز",
+    "description": "Mobile navbar versions dropdown کا label"
+  },
+  "theme.tags.tagsListLabel": {
+    "message": "ٹیگز:",
+    "description": "ٹیگ لسٹ کے ساتھ label"
+  },
+  "theme.AnnouncementBar.closeButtonAriaLabel": {
+    "message": "بند کریں",
+    "description": "Announcement bar close button کا ARIA label"
+  },
+  "theme.admonition.caution": {
+    "message": "احتیاط",
+    "description": "Caution admonition کے لیے default label"
+  },
+  "theme.admonition.danger": {
+    "message": "خطرہ",
+    "description": "Danger admonition کے لیے default label"
+  },
+  "theme.admonition.info": {
+    "message": "معلومات",
+    "description": "Info admonition کے لیے default label"
+  },
+  "theme.admonition.note": {
+    "message": "نوٹ",
+    "description": "Note admonition کے لیے default label"
+  },
+  "theme.admonition.tip": {
+    "message": "ٹپ",
+    "description": "Tip admonition کے لیے default label"
+  },
+  "theme.admonition.warning": {
+    "message": "انتباہ",
+    "description": "Warning admonition کے لیے default label"
+  },
+  "theme.blog.post.readMore": {
+    "message": "مزید پڑھیں",
+    "description": "Blog post کے excerpt سے full post کا لنک"
+  },
+  "theme.CodeBlock.copy": {
+    "message": "کاپی کریں",
+    "description": "Code block کے copy بٹن کا لیبل"
+  },
+  "theme.CodeBlock.copied": {
+    "message": "کاپی ہوگیا",
+    "description": "Code block کے copied بٹن کا لیبل"
+  },
+  "theme.CodeBlock.copyButtonAriaLabel": {
+    "message": "کوڈ کو کلپ بورڈ پر کاپی کریں",
+    "description": "Code block copy button کا ARIA label"
+  },
+  "theme.blog.post.readingTime.plurals": {
+    "message": "ایک منٹ پڑھیں|{readingTime} منٹ پڑھیں",
+    "description": "Reading time pluralized label"
+  },
+  "theme.CodeBlock.wordWrapToggle": {
+    "message": "ورڈ ریپ ٹوگل کریں",
+    "description": "Code block word wrap button کا title"
+  }
+}

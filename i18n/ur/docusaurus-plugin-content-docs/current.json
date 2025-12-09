@@ -1,0 +1,10 @@
+{
+  "version.label": {
+    "message": "1.0.0",
+    "description": "موجودہ ورژن کے لیے لیبل"
+  },
+  "sidebar.docs.category.Chapters": {
+    "message": "ابواب",
+    "description": "سائیڈبار 'docs' میں 'Chapters' کیٹیگری کے لیے لیبل"
+  }
+}

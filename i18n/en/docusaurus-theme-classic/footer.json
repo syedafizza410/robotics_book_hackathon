@@ -1,0 +1,38 @@
+{
+  "link.title.Docs": {
+    "message": "Docs",
+    "description": "The title of the footer links column with title=Docs in the footer"
+  },
+  "link.title.Community": {
+    "message": "Community",
+    "description": "The title of the footer links column with title=Community in the footer"
+  },
+  "link.title.More": {
+    "message": "More",
+    "description": "The title of the footer links column with title=More in the footer"
+  },
+  "link.item.label.Chapters": {
+    "message": "Chapters",
+    "description": "The label of footer link with label=Chapters linking to /docs"
+  },
+  "link.item.label.Linkedin": {
+    "message": "Linkedin",
+    "description": "The label of footer link with label=Linkedin linking to https://www.linkedin.com/in/umm-e-fizza-0416b4239/"
+  },
+  "link.item.label.Discord": {
+    "message": "Discord",
+    "description": "The label of footer link with label=Discord linking to https://discordapp.com/invite/docusaurus"
+  },
+  "link.item.label.X": {
+    "message": "X",
+    "description": "The label of footer link with label=X linking to https://x.com/ummefizza123"
+  },
+  "link.item.label.GitHub": {
+    "message": "GitHub",
+    "description": "The label of footer link with label=GitHub linking to https://github.com/syedafizza410"
+  },
+  "copyright": {
+    "message": "Copyright © 2025 My Project, Inc.",
+    "description": "The footer copyright"
+  }
+}

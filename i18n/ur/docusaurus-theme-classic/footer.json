@@ -1,0 +1,38 @@
+{
+  "link.title.Docs": {
+    "message": "باب",
+    "description": "فٹر میں 'Docs' عنوان والے لنک کالم کا عنوان"
+  },
+  "link.title.Community": {
+    "message": "کمیونٹی",
+    "description": "فٹر میں 'Community' عنوان والے لنک کالم کا عنوان"
+  },
+  "link.title.More": {
+    "message": "مزید",
+    "description": "فٹر میں 'More' عنوان والے لنک کالم کا عنوان"
+  },
+  "link.item.label.Chapters": {
+    "message": "ابواب",
+    "description": "فٹر لنک کا لیبل جو /docs سے جڑتا ہے"
+  },
+  "link.item.label.Linkedin": {
+    "message": "Linkedin",
+    "description": "فٹر لنک کا لیبل جو LinkedIn پروفائل سے جڑتا ہے"
+  },
+  "link.item.label.Discord": {
+    "message": "Discord",
+    "description": "فٹر لنک کا لیبل جو Discord انوائٹ سے جڑتا ہے"
+  },
+  "link.item.label.X": {
+    "message": "X",
+    "description": "فٹر لنک کا لیبل جو X پروفائل سے جڑتا ہے"
+  },
+  "link.item.label.GitHub": {
+    "message": "GitHub",
+    "description": "فٹر لنک کا لیبل جو GitHub پروفائل سے جڑتا ہے"
+  },
+  "copyright": {
+    "message": "کاپی رائٹ © 2025 میرا پروجیکٹ، انک.",
+    "description": "فٹر کا کاپی رائٹ متن"
+  }
+}

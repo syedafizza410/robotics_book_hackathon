@@ -1,0 +1,18 @@
+{
+  "title": {
+    "message": "فزیکل AI اور ہیومنوئڈ روبوٹکس",
+    "description": "نیوی بار میں عنوان"
+  },
+  "logo.alt": {
+    "message": "میری سائٹ کا لوگو",
+    "description": "نیوی بار لوگو کا alt متن"
+  },
+  "item.label.Chapters": {
+    "message": "ابواب",
+    "description": "نیوی بار آئٹم جس کا لیبل Chapters ہے"
+  },
+  "item.label.GitHub": {
+    "message": "GitHub",
+    "description": "نیوی بار آئٹم جس کا لیبل GitHub ہے"
+  }
+}

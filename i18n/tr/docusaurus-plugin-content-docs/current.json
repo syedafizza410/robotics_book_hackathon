@@ -1,0 +1,10 @@
+{
+  "version.label": {
+    "message": "1.0.0",
+    "description": "Mevcut sürüm için etiket"
+  },
+  "sidebar.docs.category.Chapters": {
+    "message": "Bölümler",
+    "description": "Sidebar 'docs' içinde 'Chapters' kategorisi için etiket"
+  }
+}

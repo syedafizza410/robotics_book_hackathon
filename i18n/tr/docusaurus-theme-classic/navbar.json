@@ -1,0 +1,18 @@
+{
+  "title": {
+    "message": "Fiziksel AI ve Humanoid Robotik",
+    "description": "Navigasyon çubuğundaki başlık"
+  },
+  "logo.alt": {
+    "message": "Sitemin Logosu",
+    "description": "Navigasyon çubuğu logosunun alt metni"
+  },
+  "item.label.Chapters": {
+    "message": "Bölümler",
+    "description": "Navigasyon çubuğu öğesi, etiketi Chapters"
+  },
+  "item.label.GitHub": {
+    "message": "GitHub",
+    "description": "Navigasyon çubuğu öğesi, etiketi GitHub"
+  }
+}
