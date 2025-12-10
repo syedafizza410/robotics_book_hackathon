@@ -27,23 +27,21 @@ def get_relevant_chunks(query: str, top_k=5):
     session.close()
     return [c[0] for c in chunks]
 
-
 def safe_gemini_call(prompt: str):
     try:
         model = genai.GenerativeModel("gemini-2.0-flash")
         response = model.generate_content(prompt)
 
         if not response or not hasattr(response, "text") or response.text is None:
-            return "Sorry, I couldn't generate a response."
+            return None  
 
         return response.text
 
     except Exception as e:
         if "429" in str(e) or "TooManyRequests" in str(e):
-            return "⚠️ API quota exceeded. Please try again after daily reset."
+            return "QUOTA_ERROR"
 
-        return f"Error: {str(e)}"
-
+        return None  
 
 def generate_answer(contexts: list, question: str) -> str:
     context = "\n\n".join(contexts)
@@ -56,7 +54,6 @@ Answer:"""
 
     return safe_gemini_call(prompt)
 
-
 def answer_from_selected_text(selected_text: str, question: str) -> str:
     prompt = f"""Answer using ONLY this selected text:
 
@@ -67,13 +64,24 @@ Answer:"""
 
     return safe_gemini_call(prompt)
 
-
 def handle_chat_query(query: str, selected_text: str = None):
     if selected_text and selected_text.strip():
-        return answer_from_selected_text(selected_text, query)
+        answer = answer_from_selected_text(selected_text, query)
+        if answer == "QUOTA_ERROR":
+            return selected_text
+        elif answer:
+            return answer
+        else:
+            return "Sorry, I couldn't generate a response."
 
     contexts = get_relevant_chunks(query)
     if not contexts:
         return "Sorry, I couldn't find relevant information in the book."
 
-    return generate_answer(contexts, query)
+    answer = generate_answer(contexts, query)
+    if answer == "QUOTA_ERROR":
+        return "\n\n".join(contexts)
+    elif answer:
+        return answer
+    else:
+        return "Sorry, I couldn't generate a response."

@@ -1,6 +1,6 @@
 from fastapi import APIRouter, HTTPException, BackgroundTasks
-from app.models import ChatRequest, ChatResponse
-from app.services import handle_chat_query
+from app.models import ChatRequest, ChatResponse, Source
+from app.services import handle_chat_query, get_relevant_chunks
 from scripts.ingest import ingest
 
 router = APIRouter()
@@ -13,22 +13,40 @@ async def health_check():
 async def chat_endpoint(request: ChatRequest):
     try:
         answer = handle_chat_query(request.query, request.selected_text)
-        
-        if "quota exceeded" in answer.lower():
+
+        # Agar AI quota exceed hua, but fallback available
+        if answer == "QUOTA_ERROR":
+            sources = []
+            if request.selected_text and request.selected_text.strip():
+                # Fallback: selected text
+                sources.append(Source(
+                    text=request.selected_text,
+                    source_file="Selected Text",
+                    chunk_id="0"
+                ))
+            else:
+                # Fallback: RAG chunks
+                chunks = get_relevant_chunks(request.query)
+                for i, c in enumerate(chunks):
+                    sources.append(Source(
+                        text=c,
+                        source_file="Book Chunk",
+                        chunk_id=str(i)
+                    ))
+
             return ChatResponse(
-                answer="⚠️ API quota exceeded. Please try again after daily reset."
+                answer="⚠️ AI API quota exceeded. Showing relevant info instead.",
+                sources=sources
             )
 
+        # Normal answer with no quota issues
         return ChatResponse(answer=answer)
 
     except HTTPException:
         raise
     except Exception as e:
-        if "quota exceeded" in str(e).lower():
-            return ChatResponse(
-                answer="⚠️ API quota exceeded. Please try again after daily reset."
-            )
         raise HTTPException(status_code=500, detail=f"Backend error: {str(e)}")
+
 
 @router.post("/ingest")
 async def ingest_endpoint(background_tasks: BackgroundTasks):
