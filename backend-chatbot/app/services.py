@@ -40,7 +40,7 @@ def safe_gemini_call(prompt: str):
 
     except Exception as e:
         if "429" in str(e) or "TooManyRequests" in str(e):
-            return "QUOTA_ERROR"
+            return "⚠️ API quota exceeded. Please try again after daily reset."
 
         return f"Error: {str(e)}"
 
