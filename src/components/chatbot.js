@@ -8,8 +8,8 @@ export default function Chatbot() {
   const [showGreeting, setShowGreeting] = useState(true);
   const [greetingText, setGreetingText] = useState("");
   const [isTyping, setIsTyping] = useState(false);
-  const [prefilled, setPrefilled] = useState(false); 
-  const [rawSelectedText, setRawSelectedText] = useState(null); 
+  const [prefilled, setPrefilled] = useState(false);
+  const [rawSelectedText, setRawSelectedText] = useState(null);
 
   const fullGreeting = "👋 Hi there! Ask me about our book";
   const msgEndRef = useRef(null);
@@ -21,8 +21,7 @@ export default function Chatbot() {
       setMessages([
         {
           role: "bot",
-          content:
-            "👋Hello! Welcome to our Book Chat Assistant🚀",
+          content: "👋Hello! Welcome to our Book Chat Assistant🚀",
         },
       ]);
     }
@@ -60,46 +59,60 @@ export default function Chatbot() {
     return () => window.removeEventListener("open-chatbot", openHandler);
   }, []);
 
- const sendMessage = async () => {
-  if (!input.trim()) return;
+  const sendMessage = async () => {
+    if (!input.trim()) return;
 
-  const currentInput = input;
-  setMessages((prev) => [...prev, { role: "user", content: currentInput }]);
-  setInput("");
-  setPrefilled(false);
-  setIsTyping(true);
+    const currentInput = input;
+    setMessages((prev) => [...prev, { role: "user", content: currentInput }]);
+    setInput("");
+    setPrefilled(false);
+    setIsTyping(true);
 
-  try {
-   const res = await fetch("https://robotics-book-hackathon-backend.vercel.app/chat", {
-  method: "POST",
-  headers: { "Content-Type": "application/json" },
-  body: JSON.stringify({
-    query: currentInput,
-    selected_text: rawSelectedText || currentInput,
-  }),
-});
-    const data = await res.json();
+    try {
+      const res = await fetch(
+        "https://robotics-book-hackathon-backend.vercel.app/chat",
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            query: currentInput,
+            selected_text: rawSelectedText || currentInput,
+          }),
+        }
+      );
 
-    setMessages((prev) => [
-      ...prev,
-      { role: "bot", content: data.answer, sources: data.sources },
-    ]);
+      const data = await res.json();
+      const isQuotaFallback =
+        data.answer &&
+        data.answer.startsWith("⚠️ API quota exceeded");
 
-    setIsTyping(false);
-    setRawSelectedText(null);
-  } catch (err) {
-    console.error(err);
-    setMessages((prev) => [
-      ...prev,
-      { role: "bot", content: "❌ Error connecting to backend." },
-    ]);
-    setIsTyping(false);
-  }
-};
+      setMessages((prev) => [
+        ...prev,
+        {
+          role: "bot",
+          content: data.answer,
+          sources: data.sources,
+          isQuotaFallback,
+        },
+      ]);
+
+      setIsTyping(false);
+      setRawSelectedText(null);
+    } catch (err) {
+      console.error(err);
+      setMessages((prev) => [
+        ...prev,
+        { role: "bot", content: "❌ Error connecting to backend." },
+      ]);
+      setIsTyping(false);
+    }
+  };
 
   return (
     <>
-      {showGreeting && <div className={styles.greetingText}>{greetingText}</div>}
+      {showGreeting && (
+        <div className={styles.greetingText}>{greetingText}</div>
+      )}
 
       {!open && (
         <div className={styles.chatBubble} onClick={toggleChat}>
@@ -118,14 +131,30 @@ export default function Chatbot() {
             {messages.map((msg, idx) => (
               <div
                 key={idx}
-                className={`${styles.msg} ${msg.role === "user" ? styles.user : styles.bot}`}
+                className={`${styles.msg} ${
+                  msg.role === "user" ? styles.user : styles.bot
+                }`}
               >
-                <div>{msg.content}</div>
+                <div>
+                  {msg.content}
+                  {msg.isQuotaFallback && (
+                    <span className={styles.fallbackLabel}>
+                      {" "}
+                      (Answer from book)
+                    </span>
+                  )}
+                </div>
+
                 {msg.sources && (
                   <div className={styles.sources}>
                     <small>
                       Sources:{" "}
-                      {msg.sources.map((s) => `${s.source_file} (Chunk: ${s.chunk_id})`).join(", ")}
+                      {msg.sources
+                        .map(
+                          (s) =>
+                            `${s.source_file} (Chunk: ${s.chunk_id})`
+                        )
+                        .join(", ")}
                     </small>
                   </div>
                 )}
