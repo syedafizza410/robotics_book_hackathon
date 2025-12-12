@@ -1,10 +1,11 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import Link from '@docusaurus/Link';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import Layout from '@theme/Layout';
 import Heading from '@theme/Heading';
 import styles from './index.module.css';
 import Chatbot from '../components/chatbot';
+import { API } from '../utils/auth'; // <- auth utils
 
 const chapters = [
   {
@@ -107,8 +108,15 @@ function HomepageHeader() {
 
 export default function Home() {
   const scrollRef = useRef(null);
+  const [user, setUser] = useState(null);
 
   useEffect(() => {
+    // check if user is logged in
+    fetch(`${API}/auth/me`, { credentials: 'include' })
+      .then(res => res.json())
+      .then(data => setUser(data.user))
+      .catch(() => setUser(null));
+
     const bars = document.querySelectorAll(`.${styles.progressBarFill}`);
     bars.forEach((bar, idx) => {
       setTimeout(() => {
@@ -127,39 +135,45 @@ export default function Home() {
     });
   };
 
+  const handleCardClick = (link) => {
+    if (!user) {
+      window.location.href = '/login';
+      return;
+    }
+    window.location.href = link;
+  };
+
   return (
     <Layout title="AI & Humanite Robotics">
       <HomepageHeader />
       <main className={styles.cardsContainer}>
-        
-        <button className={styles.arrowLeft} onClick={() => scroll('left')}>
-          ◀
-        </button>
-        
+
+        <button className={styles.arrowLeft} onClick={() => scroll('left')}>◀</button>
+
         <div className={styles.scrollContainer} ref={scrollRef}>
           {chapters.map((chapter, idx) => (
-            <Link to={chapter.link} key={idx} style={{ textDecoration: 'none' }}>
-              <div className={styles.card}>
-                <img src={chapter.image} alt={chapter.title} />
-                <h3>{chapter.title}</h3>
-                <p>{chapter.description}</p>
-                <div className={styles.progressBarContainer}>
-                  <div className={styles.progressBarFill} style={{ width: `${chapter.progress}%` }} />
-                </div>
+            <div
+              key={idx}
+              className={styles.card}
+              style={{ cursor: 'pointer' }}
+              onClick={() => handleCardClick(chapter.link)}
+            >
+              <img src={chapter.image} alt={chapter.title} />
+              <h3>{chapter.title}</h3>
+              <p>{chapter.description}</p>
+              <div className={styles.progressBarContainer}>
+                <div className={styles.progressBarFill} style={{ width: `${chapter.progress}%` }} />
               </div>
-            </Link>
+            </div>
           ))}
         </div>
 
-        <button className={styles.arrowRight} onClick={() => scroll('right')}>
-          ►
-        </button>
+        <button className={styles.arrowRight} onClick={() => scroll('right')}>►</button>
       </main>
 
-        <div>
+      <div>
         <Chatbot />
       </div>
-
     </Layout>
   );
 }
