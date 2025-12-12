@@ -7,36 +7,41 @@ export default function AskAISelectionBubble() {
 
   useEffect(() => {
     const handleSelection = () => {
-      const text = window.getSelection()?.toString().trim();
-      if (text?.length > 0) {
-        const rect = window.getSelection().getRangeAt(0).getBoundingClientRect();
-        setPos({ x: rect.left + window.scrollX, y: rect.top + window.scrollY - 45 });
+      const selection = window.getSelection();
+      if (!selection) return;
+
+      const text = selection.toString().trim();
+      if (text.length === 0) {
+        setVisible(false);
+        return;
+      }
+
+      try {
+        const range = selection.getRangeAt(0);
+        const rect = range.getBoundingClientRect();
+
+        setPos({
+          x: rect.left + window.scrollX,
+          y: rect.top + window.scrollY - 45,
+        });
+
         setSelectedText(text);
         setVisible(true);
-      } else {
+      } catch {
         setVisible(false);
-        setSelectedText("");
       }
     };
 
-    document.addEventListener("mouseup", handleSelection);
-    document.addEventListener("keyup", handleSelection);
-
-    return () => {
-      document.removeEventListener("mouseup", handleSelection);
-      document.removeEventListener("keyup", handleSelection);
-    };
+    document.addEventListener("selectionchange", handleSelection);
+    return () => document.removeEventListener("selectionchange", handleSelection);
   }, []);
 
   const handleClick = () => {
     if (!selectedText) return;
 
     window.__selectedText = selectedText;
-
     window.__promptText = `Explain this text: ${selectedText}`;
-
     window.dispatchEvent(new CustomEvent("open-chatbot"));
-
     setVisible(false);
   };
 
@@ -57,6 +62,7 @@ export default function AskAISelectionBubble() {
         cursor: "pointer",
         zIndex: 9999,
         boxShadow: "0 4px 12px rgba(0,0,0,0.25)",
+        transform: "translateX(-50%)",
       }}
     >
       Ask AI 💬

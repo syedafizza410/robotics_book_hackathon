@@ -239,7 +239,6 @@
   cursor: not-allowed;
 }
 
-/* Selected text highlight in chat */
 .selectedText {
   background: #fff3cd;
   padding: 2px 4px;
@@ -250,7 +249,6 @@
   display: inline-block;
 }
 
-/* RAG fallback label for quota exceeded */
 .fallbackLabel {
   font-size: 12px;
   color: #d9534f;
@@ -258,7 +256,6 @@
   font-weight: bold;
 }
 
-/* Sources display under bot message */
 .sources {
   margin-top: 4px;
   font-size: 11px;
