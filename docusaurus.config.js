@@ -96,7 +96,6 @@ const config = {
             { label: "Sign In", to: "/login", position: "right" },
             { label: "Sign Up", to: "/signup", position: "right" },
 
-        // 🌐 Language Dropdown (AUTO)
         {
           type: "localeDropdown",
           position: "right",

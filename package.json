@@ -16,8 +16,14 @@
     "@docusaurus/core": "^3.9.2",
     "@docusaurus/preset-classic": "^3.9.2",
     "@loadable/component": "^5.16.7",
+    "@prisma/client": "^7.1.0",
+    "better-auth": "^1.4.6",
     "react-slick": "^0.31.0",
     "slick-carousel": "^1.8.1",
     "swiper": "^12.0.3"
+  },
+  "devDependencies": {
+    "@vercel/node": "^5.5.15",
+    "prisma": "^7.1.0"
   }
 }
