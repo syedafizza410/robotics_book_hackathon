@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "../css/auth.css";
+import "../css/custom.css";
 import { loginWithEmail, loginWithGoogle } from "../utils/authClient";
 
 export default function LoginPage() {
