@@ -1,4 +1,5 @@
 import { createAuthClient } from "better-auth/react";
+import { BetterAuth } from 'better-auth';
 
 export const authClient = createAuthClient({
   baseURL: "https://robotics-book-hackathon-5zn2.vercel.app/api/auth",
