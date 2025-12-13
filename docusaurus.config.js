@@ -93,11 +93,6 @@ const config = {
           position: "left",
           label: "Chapters",
         },
-         {
-      type: "custom-AuthNavbarButton",
-      position: "right"
-    },
-
         {
           type: "localeDropdown",
           position: "right",
