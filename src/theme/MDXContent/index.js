@@ -3,7 +3,7 @@ import MDXContent from '@theme-original/MDXContent';
 import Chatbot from '@site/src/components/chatbot';
 import ReadChapterButton from '@site/src/components/readbutton';
 import AskAISelectionBubble from "@site/src/components/askaibubble";
-import { useAuth } from '@site/src/utils/auth';
+import { useAuth } from '@site/src/utils/authClient';
 import { useNavigate } from 'react-router-dom';
 
 export default function MDXContentWrapper(props) {
@@ -16,7 +16,6 @@ export default function MDXContentWrapper(props) {
   };
 
   const handleChapterClick = (e) => {
-    // prevent default if not logged in
     if (!isLoggedIn) {
       e.preventDefault();
       navigate('/login');
