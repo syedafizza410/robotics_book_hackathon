@@ -93,8 +93,10 @@ const config = {
           position: "left",
           label: "Chapters",
         },
-            { label: "Sign In", to: "/login", position: "right" },
-            { label: "Sign Up", to: "/signup", position: "right" },
+         {
+      type: "custom-AuthNavbarButton",
+      position: "right"
+    },
 
         {
           type: "localeDropdown",

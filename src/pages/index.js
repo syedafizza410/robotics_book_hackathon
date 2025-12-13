@@ -5,6 +5,8 @@ import Layout from '@theme/Layout';
 import Heading from '@theme/Heading';
 import styles from './index.module.css';
 import Chatbot from '../components/chatbot';
+import { useHistory } from '@docusaurus/router';
+import { getSession } from '../utils/authClient';
 
 const chapters = [
   {
@@ -107,6 +109,7 @@ function HomepageHeader() {
 
 export default function Home() {
   const scrollRef = useRef(null);
+  const history = useHistory();
 
   useEffect(() => {
     const bars = document.querySelectorAll(`.${styles.progressBarFill}`);
@@ -116,6 +119,24 @@ export default function Home() {
       }, 500 + idx * 200);
     });
   }, []);
+
+  const handleChapterClick = async (e, link) => {
+    e.preventDefault();
+
+    try {
+      const session = await getSession();
+
+      if (!session) {
+        history.push('/login');
+        return;
+      }
+
+      history.push(link);
+    } catch (err) {
+      alert('Something went wrong. Please login again.');
+      history.push('/login');
+    }
+  };
 
   const scroll = (direction) => {
     const container = scrollRef.current;
@@ -128,26 +149,34 @@ export default function Home() {
   };
 
   return (
-    <Layout title="AI & Humanite Robotics">
+    <Layout title="AI & Humanoid Robotics">
       <HomepageHeader />
+
       <main className={styles.cardsContainer}>
-        
         <button className={styles.arrowLeft} onClick={() => scroll('left')}>
           ◀
         </button>
-        
+
         <div className={styles.scrollContainer} ref={scrollRef}>
           {chapters.map((chapter, idx) => (
-            <Link to={chapter.link} key={idx} style={{ textDecoration: 'none' }}>
+            <a
+              href={chapter.link}
+              key={idx}
+              onClick={(e) => handleChapterClick(e, chapter.link)}
+              style={{ textDecoration: 'none' }}
+            >
               <div className={styles.card}>
                 <img src={chapter.image} alt={chapter.title} />
                 <h3>{chapter.title}</h3>
                 <p>{chapter.description}</p>
                 <div className={styles.progressBarContainer}>
-                  <div className={styles.progressBarFill} style={{ width: `${chapter.progress}%` }} />
+                  <div
+                    className={styles.progressBarFill}
+                    style={{ width: `${chapter.progress}%` }}
+                  />
                 </div>
               </div>
-            </Link>
+            </a>
           ))}
         </div>
 
@@ -156,10 +185,9 @@ export default function Home() {
         </button>
       </main>
 
-        <div>
+      <div>
         <Chatbot />
       </div>
-
     </Layout>
   );
 }
