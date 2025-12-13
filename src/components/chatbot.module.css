@@ -26,8 +26,8 @@
 
 .greetingText {
   position: fixed;
-  bottom: 50px;
-  right: 120px;
+  bottom: 80px;
+  right: 110px;
   background: linear-gradient(135deg, #560d8e, #7723cc);
   color: white;
   padding: 0.6rem 1rem;
