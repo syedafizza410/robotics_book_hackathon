@@ -1,0 +1,19 @@
+{
+  "name": "robotics-book-auth",
+  "version": "1.0.0",
+  "main": "src/index.js",
+  "scripts": {
+    "dev": "tsx watch src/index.js",
+    "start": "node src/index.js"
+  },
+  "dependencies": {
+    "hono": "^4.6.5",
+    "better-auth": "^0.5.5",
+    "drizzle-orm": "^0.35.0",
+    "@neondatabase/serverless": "^0.9.4"
+  },
+  "devDependencies": {
+    "drizzle-kit": "^0.24.2",
+    "tsx": "^4.19.1"
+  }
+}
