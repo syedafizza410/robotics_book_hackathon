@@ -1,5 +1,3 @@
-const { neon } = require("@neondatabase/serverless");
-const { drizzle } = require("drizzle-orm/neon-http");
+import { PrismaClient } from "@prisma/client";
 
-const sql = neon(process.env.DATABASE_URL);
-module.exports.db = drizzle(sql);
+export const db = new PrismaClient();
