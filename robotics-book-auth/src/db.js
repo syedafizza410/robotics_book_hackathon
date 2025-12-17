@@ -1,3 +1,12 @@
+// src/db.js
 import { PrismaClient } from "@prisma/client";
 
-export const db = new PrismaClient();
+let db;
+
+if (!global.prisma) {
+  global.prisma = new PrismaClient();
+}
+
+db = global.prisma;
+
+export { db };
