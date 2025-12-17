@@ -6,7 +6,7 @@ if (global.prisma) {
   prisma = global.prisma;
 } else {
   prisma = new PrismaClient({
-    log: ["query", "error"],  // optional: for debugging
+    log: ["error"]
   });
   global.prisma = prisma;
 }
