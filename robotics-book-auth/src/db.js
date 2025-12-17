@@ -1,11 +1,14 @@
 import { PrismaClient } from "@prisma/client";
 
-let db;
+let prisma;
 
-if (!global.prisma) {
-  global.prisma = new PrismaClient();
+if (global.prisma) {
+  prisma = global.prisma;
+} else {
+  prisma = new PrismaClient({
+    log: ["query", "error"],  // optional: for debugging
+  });
+  global.prisma = prisma;
 }
 
-db = global.prisma;
-
-export { db };
+export { prisma as db };
