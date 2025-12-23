@@ -10,7 +10,6 @@ load_dotenv()
 co = cohere.Client(os.getenv("COHERE_API_KEY"))
 genai.configure(api_key=os.getenv("GEMINI_API_KEY"))
 
-# --- Embedding & Vector Retrieval ---
 def get_query_embedding(query: str):
     response = co.embed(
         texts=[query],
@@ -28,7 +27,6 @@ def get_relevant_chunks(query: str, top_k=5):
     session.close()
     return [c[0] for c in chunks]
 
-# --- Gemini Safe Call ---
 def safe_gemini_call(prompt: str):
     try:
         model = genai.GenerativeModel("gemini-2.0-flash")
@@ -41,15 +39,13 @@ def safe_gemini_call(prompt: str):
 
     except Exception as e:
         if "429" in str(e) or "TooManyRequests" in str(e):
-            return None  # quota exceeded → fallback
-        return None  # any other Gemini failure → fallback
+            return None 
+        return None  
 
-# --- RAG Fallback Answer ---
 def generate_answer_rag(contexts: list, question: str) -> str:
     context = "\n\n".join(contexts)
     return f"Based on the book content:\n{context}\nAnswer: {question}"
 
-# --- Main Handler ---
 def handle_chat_query(query: str, selected_text: str = None):
     if selected_text and selected_text.strip():
         prompt = f"Answer using ONLY this selected text:\n\n{selected_text}\n\nQuestion: {query}\nAnswer:"
@@ -57,13 +53,11 @@ def handle_chat_query(query: str, selected_text: str = None):
         if gemini_answer:
             return gemini_answer
 
-        # fallback
         contexts = get_relevant_chunks(query)
         if contexts:
             return generate_answer_rag(contexts, query)
         return "Sorry, no relevant info found in the book."
 
-    # Case: full question without selected_text
     contexts = get_relevant_chunks(query)
     if not contexts:
         return "Sorry, couldn't find relevant info in the book."
@@ -73,5 +67,4 @@ def handle_chat_query(query: str, selected_text: str = None):
     if gemini_answer:
         return gemini_answer
 
-    # fallback
     return generate_answer_rag(contexts, query)
