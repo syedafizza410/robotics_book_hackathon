@@ -1,6 +1,7 @@
 import cohere
 import google.generativeai as genai
 import os
+import re
 from dotenv import load_dotenv
 from app.db import SessionLocal, Chunk
 from app.vector_db import client, COLLECTION_NAME
@@ -35,6 +36,7 @@ def get_relevant_chunks(query: str, top_k=5):
 
     return [c[0] for c in chunks]
 
+
 def safe_gemini_call(prompt: str):
     try:
         model = genai.GenerativeModel("gemini-2.0-flash")
@@ -50,23 +52,71 @@ def safe_gemini_call(prompt: str):
             return None
         return None
 
+
+def filter_chunks_by_question(contexts: list, question: str) -> list:
+    q = question.lower()
+
+    if "ros" in q:
+        return [
+            c for c in contexts
+            if "ros" in c.lower() or "robot operating system" in c.lower()
+        ]
+
+    if "control" in q or "pid" in q:
+        return [c for c in contexts if "control" in c.lower() or "pid" in c.lower()]
+
+    if "kinematics" in q:
+        return [c for c in contexts if "kinematics" in c.lower()]
+
+    return contexts
+
+
+def clean_chunk_text(text: str) -> str:
+    lines = text.split("\n")
+    clean_lines = []
+
+    for line in lines:
+        l = line.strip()
+
+        if (
+            l.startswith("---")
+            or l.startswith("#")
+            or "learning outcomes" in l.lower()
+            or "introduction" in l.lower()
+            or "summary" in l.lower()
+            or "figure" in l.lower()
+        ):
+            continue
+
+        if len(l) < 40:
+            continue
+
+        clean_lines.append(l)
+
+    cleaned = " ".join(clean_lines)
+    return cleaned[:350]
+
+
 def format_rag_response(contexts: list, question: str) -> str:
+    filtered = filter_chunks_by_question(contexts, question)
+
+    if not filtered:
+        filtered = contexts[:1]
+
     response = []
-    response.append(f"## 🤖 {question}\n")
+    response.append(f"## 🤖 {question.capitalize()}\n")
     response.append("📘 **Relevant information from the book:**\n")
 
-    for i, ctx in enumerate(contexts[:3], start=1):
-        text = ctx.strip()
+    used = 0
+    for ctx in filtered:
+        cleaned = clean_chunk_text(ctx)
+        if cleaned:
+            response.append(f"- {cleaned}")
+            used += 1
+        if used == 3:
+            break
 
-        if len(text) > 500:
-            text = text[:500] + "..."
-
-        response.append(f"### 🔹 Reference {i}\n{text}\n")
-
-    response.append(
-        "💡 *This answer is shown directly from the book because the AI service is temporarily unavailable.*"
-    )
-
+    response.append("\n📘 *Source: Robotics Physical AI Book (RAG fallback)*")
     return "\n".join(response)
 
 
@@ -82,7 +132,7 @@ You are a robotics book assistant.
 
 RULES:
 - Use ONLY the selected text
-- Give a clear and concise answer
+- Answer clearly and briefly
 - Use bullet points if helpful
 - Max 120 words
 
