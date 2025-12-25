@@ -11,6 +11,7 @@ load_dotenv()
 co = cohere.Client(os.getenv("COHERE_API_KEY"))
 genai.configure(api_key=os.getenv("GEMINI_API_KEY"))
 
+
 def get_query_embedding(query: str):
     response = co.embed(
         texts=[query],
@@ -47,9 +48,7 @@ def safe_gemini_call(prompt: str):
 
         return response.text.strip()
 
-    except Exception as e:
-        if "429" in str(e) or "TooManyRequests" in str(e):
-            return None
+    except Exception:
         return None
 
 
@@ -57,13 +56,10 @@ def filter_chunks_by_question(contexts: list, question: str) -> list:
     q = question.lower()
 
     if "ros" in q:
-        return [
-            c for c in contexts
-            if "ros" in c.lower() or "robot operating system" in c.lower()
-        ]
+        return [c for c in contexts if "ros" in c.lower()]
 
     if "control" in q or "pid" in q:
-        return [c for c in contexts if "control" in c.lower() or "pid" in c.lower()]
+        return [c for c in contexts if "control" in c.lower()]
 
     if "kinematics" in q:
         return [c for c in contexts if "kinematics" in c.lower()]
@@ -71,50 +67,46 @@ def filter_chunks_by_question(contexts: list, question: str) -> list:
     return contexts
 
 
-def clean_chunk_text(text: str) -> str:
-    lines = text.split("\n")
-    clean_lines = []
+def extract_sentences(text: str, max_sentences=2):
+    text = re.sub(r"---.*?---", "", text, flags=re.DOTALL)
+    text = re.sub(r"#.*", "", text)
+    text = re.sub(r"\s+", " ", text).strip()
 
-    for line in lines:
-        l = line.strip()
+    sentences = re.split(r"(?<=[.!?])\s+", text)
 
-        if (
-            l.startswith("---")
-            or l.startswith("#")
-            or "learning outcomes" in l.lower()
-            or "introduction" in l.lower()
-            or "summary" in l.lower()
-            or "figure" in l.lower()
-        ):
-            continue
+    good = [
+        s for s in sentences
+        if len(s) > 40
+        and not s.lower().startswith("learning outcomes")
+        and not s.lower().startswith("figure")
+    ]
 
-        if len(l) < 40:
-            continue
-
-        clean_lines.append(l)
-
-    cleaned = " ".join(clean_lines)
-    return cleaned[:350]
+    return good[:max_sentences]
 
 
 def format_rag_response(contexts: list, question: str) -> str:
     filtered = filter_chunks_by_question(contexts, question)
-
     if not filtered:
         filtered = contexts[:1]
+
+    bullets = []
+
+    for ctx in filtered:
+        sentences = extract_sentences(ctx)
+        for s in sentences:
+            bullets.append(s)
+        if len(bullets) >= 3:
+            break
+
+    if not bullets and contexts:
+        bullets.append(contexts[0][:200])
 
     response = []
     response.append(f"## 🤖 {question.capitalize()}\n")
     response.append("📘 **Relevant information from the book:**\n")
 
-    used = 0
-    for ctx in filtered:
-        cleaned = clean_chunk_text(ctx)
-        if cleaned:
-            response.append(f"- {cleaned}")
-            used += 1
-        if used == 3:
-            break
+    for b in bullets[:3]:
+        response.append(f"- {b}")
 
     response.append("\n📘 *Source: Robotics Physical AI Book (RAG fallback)*")
     return "\n".join(response)
@@ -128,53 +120,35 @@ def handle_chat_query(query: str, selected_text: str = None):
 
     if selected_text and selected_text.strip():
         prompt = f"""
-You are a robotics book assistant.
+Use ONLY the selected text.
+Answer clearly and briefly.
 
-RULES:
-- Use ONLY the selected text
-- Answer clearly and briefly
-- Use bullet points if helpful
-- Max 120 words
-
-SELECTED TEXT:
+TEXT:
 {selected_text}
 
 QUESTION:
 {query}
-
-ANSWER:
 """
         gemini_answer = safe_gemini_call(prompt)
         if gemini_answer:
             return gemini_answer
 
         contexts = get_relevant_chunks(query)
-        if contexts:
-            return generate_answer_rag(contexts, query)
-
-        return "Sorry, no relevant information found in the book."
+        return generate_answer_rag(contexts, query)
 
     contexts = get_relevant_chunks(query)
     if not contexts:
         return "Sorry, couldn't find relevant information in the book."
 
     prompt = f"""
-You are a robotics book assistant.
-
-RULES:
-- Use ONLY the provided context
-- Do NOT dump the full chapter
-- Give a short, well-structured answer
-- Use Markdown
-- Max 150 words
+Use ONLY the context below.
+Answer clearly (max 150 words).
 
 CONTEXT:
 {'\n\n'.join(contexts)}
 
 QUESTION:
 {query}
-
-ANSWER:
 """
     gemini_answer = safe_gemini_call(prompt)
     if gemini_answer:
